@@ -128,22 +128,27 @@ Abstract text (maximum of 500 words).
 
 %---------- Primeiro Capitulo ----------
 \chapter{Introdução}
+\label{chap:introducao}
 
 O presente documento é um exemplo de uso do estilo de formatação \LaTeX\ elaborado para atender às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR. O estilo de formatação {\ttfamily normas-utf-tex.cls} tem por base o pacote \textsc{abn}\TeX~-- cuja leitura da documentação \cite{abnTeX2009} é fortemente sugerida~-- e o estilo de formatação \LaTeX\ da UFPR.
 
 Para melhor entendimento do uso do estilo de formatação {\ttfamily normas-utf-tex.cls}, aconselha-se que o potencial usuário analise os comandos existentes no arquivo \TeX\ ({\ttfamily modelo\_*.tex}) e os resultados obtidos no arquivo PDF ({\ttfamily modelo\_*.pdf}) depois do processamento pelo software \LaTeX\ + \textsc{Bib}\TeX~\cite{LaTeX2009,BibTeX2009}. Recomenda-se a consulta ao material de referência do software para a sua correta utilização~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
 
 \section{Motivação}
+\label{sec:motivacao}
 
 Uma das principais vantagens do uso do estilo de formatação {\ttfamily normas-utf-tex.cls} para \LaTeX\ é a formatação \textit{automática} dos elementos que compõem um documento acadêmico, tais como capa, folha de rosto, dedicatória, agradecimentos, epígrafe, resumo, abstract, listas de figuras, tabelas, siglas e símbolos, sumário, capítulos, referências, etc. Outras grandes vantagens do uso do \LaTeX\ para formatação de documentos acadêmicos dizem respeito à facilidade de gerenciamento de referências cruzadas e bibliográficas, além da formatação~-- inclusive de equações  matemáticas~-- correta e esteticamente perfeita.
 
 \section{Objetivos}
+\label{sec:objetivos}
 
 \subsection{Objetivo Geral}
+\label{subsec:objetivoGeral}
 
 Prover um modelo de formatação \LaTeX\ que atenda às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR~\cite{UTFPR2008}.
 
 \subsection{Objetivos Específicos}
+\label{subsec:objetivosEspecificos}
 
 \begin{itemize}
 	\item Obter documentos acadêmicos automaticamente formatados com correção e perfeição estética.
@@ -160,6 +165,7 @@ Prover um modelo de formatação \LaTeX\ que atenda às Normas para Elaboração de T
 A seguir ilustra-se a forma de incluir figuras, tabelas, equações, siglas e símbolos no documento, obtendo indexação automática em suas respectivas listas. A numeração sequencial de figuras, tabelas e equações ocorre de modo automático. Referências cruzadas são obtidas através dos comandos {\ttfamily \textbackslash label\{\}} e {\ttfamily \textbackslash ref\{\}}. Por exemplo, não é necessário saber que o número deste capítulo é~\ref{chap:desenv} para colocar o seu número no texto. Isto facilita muito a inserção, remoção ou relocação de elementos numerados no texto (fato corriqueiro na escrita e correção de um documento acadêmico) sem a necessidade de renumerá-los todos.
 
 \section{Figuras}
+\label{sec:figuras}
 
 Na figura~\ref{fig:dummy} é apresentado um exemplo de gráfico flutuante. Esta figura aparece automaticamente na lista de figuras. Para uso avançado de gráficos no \LaTeX, recomenda-se a consulta de literatura especializada~\cite{Goossens2007}.
 
@@ -173,6 +179,7 @@ Na figura~\ref{fig:dummy} é apresentado um exemplo de gráfico flutuante. Esta fi
 
 
 \section{Tabelas}
+\label{sec:tabelas}
 
 Também é apresentado o exemplo da tabela~\ref{tab:correlacao}, que aparece automaticamente na lista de tabelas. Informações sobre a construção de tabelas no \LaTeX\ podem ser encontradas na literatura especializada~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
 
@@ -196,6 +203,7 @@ Também é apresentado o exemplo da tabela~\ref{tab:correlacao}, que aparece autom
 
 
 \section{Equações}
+\label{sec:equacoes}
 
 A transformada de Laplace é dada na equação~\eqref{eq:laplace}, enquanto a equação~\eqref{eq:dft} apresenta a formulação da transformada discreta de Fourier bidimensional\footnote{Deve-se reparar na formatação esteticamente perfeita destas equações!}.
 
@@ -210,12 +218,14 @@ F(u, v) = \sum_{m = 0}^{M - 1} \sum_{n = 0}^{N - 1} f(m, n) \exp \left[ -j 2 \pi
 \end{equation}
 
 \section{Siglas e símbolos}
+\label{sec:siglasSimbolos}
 
 O pacote \textsc{abn}\TeX\ permite ainda a definição de siglas e símbolos com indexação automática através dos comandos {\ttfamily \textbackslash sigla\{\}\{\}} e {\ttfamily \textbackslash simbolo\{\}\{\}}. Por exemplo, o significado das siglas \sigla{PPGSE}{Programa de Pós-graduação em Sistemas de Energia}, \sigla{DAELT}{Departamento Acadêmico de Eletrotécnica} e \sigla{UTFPR}{Universidade Tecnológica Federal do Paraná} aparecem automaticamente na lista de siglas, bem como o significado dos símbolos \simbolo{$\lambda$}{comprimento de onda}, \simbolo{$v$}{velocidade} e \simbolo{$f$}{frequência} aparecem automaticamente na lista de símbolos. Mais detalhes sobre o uso destes e outros comandos do \textsc{abn}\TeX\ são encontrados na sua documentação específica~\cite{abnTeX2009}.
 
 
 %---------- Terceiro Capitulo ----------
 \chapter{Conclusão}
+\label{chap:conclusao}
 
 Espera-se que o uso do estilo de formatação \LaTeX\ adequado às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR ({\ttfamily normas-utf-tex.cls}) facilite a escrita de documentos no âmbito desta instituição e aumente a produtividade de seus autores. Para usuários iniciantes em \LaTeX, além da bibliografia especializada já citada, existe ainda uma série de recursos~\cite{CTAN2009} e fontes de informação~\cite{TeX-Br2009,Wikibooks2009} disponíveis na Internet.
 
@@ -237,6 +247,7 @@ O estilo de formatação \LaTeX\ da UTFPR e este exemplo de utilização foram elabo
 %---------- Apendices (opcionais) ----------
 \apendice
 \chapter{Nome do Apêndice}
+\label{chap:apendice}
 
 Use o comando {\ttfamily \textbackslash apendice} e depois comandos {\ttfamily \textbackslash chapter\{\}}
 para gerar títulos de apêndices.
@@ -245,6 +256,7 @@ para gerar títulos de apêndices.
 % ---------- Anexos (opcionais) ----------
 \anexo
 \chapter{Nome do Anexo}
+\label{chap:anexo}
 
 Use o comando {\ttfamily \textbackslash anexo} e depois comandos {\ttfamily \textbackslash chapter\{\}}
 para gerar títulos de anexos.
