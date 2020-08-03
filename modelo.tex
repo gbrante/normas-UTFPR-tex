@@ -11,7 +11,9 @@
 
 % force A4 paper format
 \special{papersize=210mm,297mm}
-
+\usepackage[plainpages=true, bookmarks=true, breaklinks, pdfstartview=FitH,pdftitle={Nome da Teste},pdfauthor={Nome do autor},pdfsubject={Assunto do documento},pdfkeywords={Palavras-chave}]{hyperref}
+\usepackage[hyphenbreaks]{breakurl}
+\urlstyle{same}
 %configuracao correta das referencias bibliograficas.
 \usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm,abnt-etal-cite=2,abnt-etal-list=0,abnt-thesis-year=both]{abntcite}
 
@@ -22,7 +24,6 @@
 %\usepackage{times} % fonte times (substituida pelos dois comandos abaixo - padrao LATEX)
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{url}
 \usepackage[final]{pdfpages} % adicao da ata
 
 
@@ -66,7 +67,9 @@
 
 %---------- Inicio do Documento ----------
 \begin{document}
-
+\pdfstringdefDisableCommands{%
+	\let\MakeUppercase\relax
+}
 \capa % geracao automatica da capa
 \folhaderosto % geracao automatica da folha de rosto
 

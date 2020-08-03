@@ -966,12 +966,14 @@ FUNCTION {format.journal.pages}
 
 FUNCTION {get.url.type}
 {s #1 #5 substring$ "http:" = {http.url}
+  {s #1 #6 substring$ "https:" = {http.url}
   {s #1 #5 substring$ "file:" = {file.url}
      {s #1 #4 substring$ "ftp:"  = {ftp.url}
        {s #1 #4 substring$ "doi:"  = {doi.url}
          {s #1 #7 substring$ "mailto:" = {mailto.url} {unknown.url} if$}
        if$}
      if$}
+   if$}
    if$}
  if$
  'url.type :=
@@ -995,6 +997,7 @@ FUNCTION {filter.url.tex}
     duplicate$ "&" = {pop$ "\&" } 'skip$ if$
     duplicate$ "~" = {pop$ "\~{}" } 'skip$ if$
     duplicate$ "/" = {pop$ "\-/" } 'skip$ if$
+    duplicate$ "#" = {pop$ "\#" } 'skip$ if$
     duplicate$ "." = {pop$ "\-." } 'skip$ if$
     duplicate$ "\" = {pop$ "{\textbackslash}" } 'skip$ if$
     t swap$ * 't :=
@@ -1009,6 +1012,7 @@ FUNCTION {filter.url.html}
   {url.pos url.length <}
     {s url.pos #1 substring$
     duplicate$ "%" = {pop$ "\%" } 'skip$ if$
+	duplicate$ "#" = {pop$ "\#" } 'skip$ if$
     t swap$ * 't :=
     url.pos #1 + 'url.pos :=
     }
@@ -1021,24 +1025,24 @@ FUNCTION {compose.url}
  get.url.type
  bbl.url.available
  abnt.url.package #0 =
-   { "$<$"   *
+   { ""   *
    abnt.doi abnt.doi.expand.to.url = 'expand.doi {s} if$
-   * "$>$" *} 'skip$ if$
+   * "" *} 'skip$ if$
  abnt.url.package #1 =
    { "\url{" * s * "}" *} 'skip$ if$
  abnt.url.package #2 =
    {url.type http.url =
-     {"\htmladdnormallink{$<$" * filter.url.tex * "$>$}{" * filter.url.html * "}" *}
+     {"\burl{" * filter.url.html * "}" *}
      'skip$ if$
     url.type doi.url = url.type ftp.url = or url.type mailto.url = or
-     {"\htmladdnormallink{$<$" *
-      abnt.doi abnt.doi.expand.to.url = 'expand.doi {s} if$
-      * "$>$}{" *
+     {"\href{" *
       abnt.doi abnt.doi.leave.as.is = {s} 'expand.doi if$
+      * "}{" *
+      abnt.doi abnt.doi.expand.to.url = 'expand.doi {s} if$
       * "}" * }
      'skip$ if$
     url.type unknown.url =
-     {"$<$" * filter.url.tex * "$>$" *}
+     {"" * filter.url.tex * "" *}
      'skip$ if$} 'skip$ if$
 }
 FUNCTION {format.url}
