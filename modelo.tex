@@ -1,9 +1,9 @@
-%% Exemplo de utilizacao do estilo de formatacao normas-utf-tex (http://normas-utf-tex.sourceforge.net)
+Ã¯Â»Â¿%% Exemplo de utilizacao do estilo de formatacao normas-utf-tex (http://normas-utf-tex.sourceforge.net)
 %% Autores: (200?-2011) Hugo Vieira Neto (hvieir@utfpr.edu.br)
 %%          (200?-2011) Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com)
 %%          (2011-2012) Marcos Talau <talau@users.sourceforge.net>
 %% Colaborador:
-%%          (2011) César M. Vargas Benitez <cesarvargasb@gmail.com>
+%%          (2011) CÃƒÂ©sar M. Vargas Benitez <cesarvargasb@gmail.com>
 %%          (2015) Glauber Gomes de Oliveira Brante <gbrante@utfpr.edu.br>
 
 \documentclass[openright]{normas-utf-tex} %openright = o capitulo comeca sempre em paginas impares
@@ -18,7 +18,7 @@
 \usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm,abnt-etal-cite=2,abnt-etal-list=0,abnt-thesis-year=both]{abntcite}
 
 \usepackage[brazil]{babel} % pacote portugues brasileiro
-\usepackage[latin1]{inputenc} % pacote para acentuacao direta
+\usepackage[utf8]{inputenc} % pacote para acentuacao direta
 \usepackage{amsmath,amsfonts,amssymb} % pacote matematico
 \usepackage{graphicx} % pacote grafico
 %\usepackage{times} % fonte times (substituida pelos dois comandos abaixo - padrao LATEX)
@@ -28,16 +28,16 @@
 
 
 % ---------- Preambulo ----------
-\instituicao{Universidade Tecnológica Federal do Paraná} % nome da instituicao
-\programa{Programa de Pós-graduação em Sistemas de Energia} % nome do programa
-\area{Automação e Sistemas de Energia} % area de concentracao
+\instituicao{Universidade TecnolÃƒÂ³gica Federal do ParanÃƒÂ¡} % nome da instituicao
+\programa{Programa de PÃƒÂ³s-graduaÃƒÂ§ÃƒÂ£o em Sistemas de Energia} % nome do programa
+\area{AutomaÃƒÂ§ÃƒÂ£o e Sistemas de Energia} % area de concentracao
 
-\documento{Dissertação} % [Dissertacao] ou [Tese]
+\documento{DissertaÃƒÂ§ÃƒÂ£o} % [Dissertacao] ou [Tese]
 \documentoingles{Thesis}
 \nivel{Mestrado} % [Mestrado] ou [Doutorado]
 \titulacao{Mestre} % [Mestre] ou [Doutor]
 
-\titulo{Título em Português} % titulo do trabalho em portugues
+\titulo{TÃƒÂ­tulo em PortuguÃƒÂªs} % titulo do trabalho em portugues
 \title{Title in English} % titulo do trabalho em ingles
 
 \autor{Nome Completo} % autor do trabalho
@@ -46,7 +46,7 @@
 \palavraschave{Palavra-chave 1. Palavra-chave 2. ...} % palavras-chave do trabalho
 \keywords{Keyword 1. Keyword 2. ...} % palavras-chave do trabalho em ingles
 
-\comentario{\UTFPRdocumentodata\ apresentada ao \UTFPRprogramadata\ da \ABNTinstituicaodata\ como requisito parcial para obtenção do título de ``\UTFPRtitulacaodata\ em Engenharia Elétrica'' -- Área de Concentração: \UTFPRareadata.}
+\comentario{\UTFPRdocumentodata\ apresentada ao \UTFPRprogramadata\ da \ABNTinstituicaodata\ como requisito parcial para obtenÃƒÂ§ÃƒÂ£o do tÃƒÂ­tulo de ``\UTFPRtitulacaodata\ em Engenharia ElÃƒÂ©trica'' -- ÃƒÂrea de ConcentraÃƒÂ§ÃƒÂ£o: \UTFPRareadata.}
 
 \orientador{Nome do Orientador} % nome do orientador do trabalho
 %\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
@@ -113,7 +113,7 @@ Abstract text (maximum of 500 words).
 % sumario
 \sumario % geracao automatica do sumario
 
-% Pacotes necessários quando não se usa sumário
+% Pacotes necessÃƒÂ¡rios quando nÃƒÂ£o se usa sumÃƒÂ¡rio
 %\renewcommand{\chaptertitlepagestyle}{plainheader}
 %\pagenumbering{arabic}
 
@@ -130,17 +130,17 @@ Abstract text (maximum of 500 words).
 %\setcounter{page}{12}
 
 %---------- Primeiro Capitulo ----------
-\chapter{Introdução}
+\chapter{IntroduÃƒÂ§ÃƒÂ£o}
 \label{chap:introducao}
 
-O presente documento é um exemplo de uso do estilo de formatação \LaTeX\ elaborado para atender às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR. O estilo de formatação {\ttfamily normas-utf-tex.cls} tem por base o pacote \textsc{abn}\TeX~-- cuja leitura da documentação \cite{abnTeX2009} é fortemente sugerida~-- e o estilo de formatação \LaTeX\ da UFPR.
+O presente documento ÃƒÂ© um exemplo de uso do estilo de formataÃƒÂ§ÃƒÂ£o \LaTeX\ elaborado para atender ÃƒÂ s Normas para ElaboraÃƒÂ§ÃƒÂ£o de Trabalhos AcadÃƒÂªmicos da UTFPR. O estilo de formataÃƒÂ§ÃƒÂ£o {\ttfamily normas-utf-tex.cls} tem por base o pacote \textsc{abn}\TeX~-- cuja leitura da documentaÃƒÂ§ÃƒÂ£o \cite{abnTeX2009} ÃƒÂ© fortemente sugerida~-- e o estilo de formataÃƒÂ§ÃƒÂ£o \LaTeX\ da UFPR.
 
-Para melhor entendimento do uso do estilo de formatação {\ttfamily normas-utf-tex.cls}, aconselha-se que o potencial usuário analise os comandos existentes no arquivo \TeX\ ({\ttfamily modelo\_*.tex}) e os resultados obtidos no arquivo PDF ({\ttfamily modelo\_*.pdf}) depois do processamento pelo software \LaTeX\ + \textsc{Bib}\TeX~\cite{LaTeX2009,BibTeX2009}. Recomenda-se a consulta ao material de referência do software para a sua correta utilização~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
+Para melhor entendimento do uso do estilo de formataÃƒÂ§ÃƒÂ£o {\ttfamily normas-utf-tex.cls}, aconselha-se que o potencial usuÃƒÂ¡rio analise os comandos existentes no arquivo \TeX\ ({\ttfamily modelo\_*.tex}) e os resultados obtidos no arquivo PDF ({\ttfamily modelo\_*.pdf}) depois do processamento pelo software \LaTeX\ + \textsc{Bib}\TeX~\cite{LaTeX2009,BibTeX2009}. Recomenda-se a consulta ao material de referÃƒÂªncia do software para a sua correta utilizaÃƒÂ§ÃƒÂ£o~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
 
-\section{Motivação}
+\section{MotivaÃƒÂ§ÃƒÂ£o}
 \label{sec:motivacao}
 
-Uma das principais vantagens do uso do estilo de formatação {\ttfamily normas-utf-tex.cls} para \LaTeX\ é a formatação \textit{automática} dos elementos que compõem um documento acadêmico, tais como capa, folha de rosto, dedicatória, agradecimentos, epígrafe, resumo, abstract, listas de figuras, tabelas, siglas e símbolos, sumário, capítulos, referências, etc. Outras grandes vantagens do uso do \LaTeX\ para formatação de documentos acadêmicos dizem respeito à facilidade de gerenciamento de referências cruzadas e bibliográficas, além da formatação~-- inclusive de equações  matemáticas~-- correta e esteticamente perfeita.
+Uma das principais vantagens do uso do estilo de formataÃƒÂ§ÃƒÂ£o {\ttfamily normas-utf-tex.cls} para \LaTeX\ ÃƒÂ© a formataÃƒÂ§ÃƒÂ£o \textit{automÃƒÂ¡tica} dos elementos que compÃƒÂµem um documento acadÃƒÂªmico, tais como capa, folha de rosto, dedicatÃƒÂ³ria, agradecimentos, epÃƒÂ­grafe, resumo, abstract, listas de figuras, tabelas, siglas e sÃƒÂ­mbolos, sumÃƒÂ¡rio, capÃƒÂ­tulos, referÃƒÂªncias, etc. Outras grandes vantagens do uso do \LaTeX\ para formataÃƒÂ§ÃƒÂ£o de documentos acadÃƒÂªmicos dizem respeito ÃƒÂ  facilidade de gerenciamento de referÃƒÂªncias cruzadas e bibliogrÃƒÂ¡ficas, alÃƒÂ©m da formataÃƒÂ§ÃƒÂ£o~-- inclusive de equaÃƒÂ§ÃƒÂµes  matemÃƒÂ¡ticas~-- correta e esteticamente perfeita.
 
 \section{Objetivos}
 \label{sec:objetivos}
@@ -148,15 +148,15 @@ Uma das principais vantagens do uso do estilo de formatação {\ttfamily normas-ut
 \subsection{Objetivo Geral}
 \label{subsec:objetivoGeral}
 
-Prover um modelo de formatação \LaTeX\ que atenda às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR~\cite{UTFPR2008}.
+Prover um modelo de formataÃƒÂ§ÃƒÂ£o \LaTeX\ que atenda ÃƒÂ s Normas para ElaboraÃƒÂ§ÃƒÂ£o de Trabalhos AcadÃƒÂªmicos da UTFPR~\cite{UTFPR2008}.
 
-\subsection{Objetivos Específicos}
+\subsection{Objetivos EspecÃƒÂ­ficos}
 \label{subsec:objetivosEspecificos}
 
 \begin{itemize}
-	\item Obter documentos acadêmicos automaticamente formatados com correção e perfeição estética.
-	\item Desonerar autores da tediosa tarefa de formatar documentos acadêmicos, permitindo sua concentração no conteúdo do mesmo.
-	\item Desonerar orientadores e examinadores da tediosa tarefa de conferir a formatação de documentos acadêmicos, permitindo sua concentração no conteúdo do mesmo.
+	\item Obter documentos acadÃƒÂªmicos automaticamente formatados com correÃƒÂ§ÃƒÂ£o e perfeiÃƒÂ§ÃƒÂ£o estÃƒÂ©tica.
+	\item Desonerar autores da tediosa tarefa de formatar documentos acadÃƒÂªmicos, permitindo sua concentraÃƒÂ§ÃƒÂ£o no conteÃƒÂºdo do mesmo.
+	\item Desonerar orientadores e examinadores da tediosa tarefa de conferir a formataÃƒÂ§ÃƒÂ£o de documentos acadÃƒÂªmicos, permitindo sua concentraÃƒÂ§ÃƒÂ£o no conteÃƒÂºdo do mesmo.
 \end{itemize}
 
 
@@ -165,12 +165,12 @@ Prover um modelo de formatação \LaTeX\ que atenda às Normas para Elaboração de T
 \chapter{Desenvolvimento}
 \label{chap:desenv}
 
-A seguir ilustra-se a forma de incluir figuras, tabelas, equações, siglas e símbolos no documento, obtendo indexação automática em suas respectivas listas. A numeração sequencial de figuras, tabelas e equações ocorre de modo automático. Referências cruzadas são obtidas através dos comandos {\ttfamily \textbackslash label\{\}} e {\ttfamily \textbackslash ref\{\}}. Por exemplo, não é necessário saber que o número deste capítulo é~\ref{chap:desenv} para colocar o seu número no texto. Isto facilita muito a inserção, remoção ou relocação de elementos numerados no texto (fato corriqueiro na escrita e correção de um documento acadêmico) sem a necessidade de renumerá-los todos.
+A seguir ilustra-se a forma de incluir figuras, tabelas, equaÃƒÂ§ÃƒÂµes, siglas e sÃƒÂ­mbolos no documento, obtendo indexaÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica em suas respectivas listas. A numeraÃƒÂ§ÃƒÂ£o sequencial de figuras, tabelas e equaÃƒÂ§ÃƒÂµes ocorre de modo automÃƒÂ¡tico. ReferÃƒÂªncias cruzadas sÃƒÂ£o obtidas atravÃƒÂ©s dos comandos {\ttfamily \textbackslash label\{\}} e {\ttfamily \textbackslash ref\{\}}. Por exemplo, nÃƒÂ£o ÃƒÂ© necessÃƒÂ¡rio saber que o nÃƒÂºmero deste capÃƒÂ­tulo ÃƒÂ©~\ref{chap:desenv} para colocar o seu nÃƒÂºmero no texto. Isto facilita muito a inserÃƒÂ§ÃƒÂ£o, remoÃƒÂ§ÃƒÂ£o ou relocaÃƒÂ§ÃƒÂ£o de elementos numerados no texto (fato corriqueiro na escrita e correÃƒÂ§ÃƒÂ£o de um documento acadÃƒÂªmico) sem a necessidade de renumerÃƒÂ¡-los todos.
 
 \section{Figuras}
 \label{sec:figuras}
 
-Na figura~\ref{fig:dummy} é apresentado um exemplo de gráfico flutuante. Esta figura aparece automaticamente na lista de figuras. Para uso avançado de gráficos no \LaTeX, recomenda-se a consulta de literatura especializada~\cite{Goossens2007}.
+Na figura~\ref{fig:dummy} ÃƒÂ© apresentado um exemplo de grÃƒÂ¡fico flutuante. Esta figura aparece automaticamente na lista de figuras. Para uso avanÃƒÂ§ado de grÃƒÂ¡ficos no \LaTeX, recomenda-se a consulta de literatura especializada~\cite{Goossens2007}.
 
 \begin{figure}[!htb]
 	\centering
@@ -184,11 +184,11 @@ Na figura~\ref{fig:dummy} é apresentado um exemplo de gráfico flutuante. Esta fi
 \section{Tabelas}
 \label{sec:tabelas}
 
-Também é apresentado o exemplo da tabela~\ref{tab:correlacao}, que aparece automaticamente na lista de tabelas. Informações sobre a construção de tabelas no \LaTeX\ podem ser encontradas na literatura especializada~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
+TambÃƒÂ©m ÃƒÂ© apresentado o exemplo da tabela~\ref{tab:correlacao}, que aparece automaticamente na lista de tabelas. InformaÃƒÂ§ÃƒÂµes sobre a construÃƒÂ§ÃƒÂ£o de tabelas no \LaTeX\ podem ser encontradas na literatura especializada~\cite{Lamport1986,Buerger1989,Kopka2003,Mittelbach2004}.
 
 \begin{table}[!htb]
 	\centering
-	\caption[Exemplo de uma tabela]{Exemplo de uma tabela mostrando a correlação entre x e y.}
+	\caption[Exemplo de uma tabela]{Exemplo de uma tabela mostrando a correlaÃƒÂ§ÃƒÂ£o entre x e y.}
 	\label{tab:correlacao}
 	\begin{tabular}{cc}
 		\hline
@@ -200,15 +200,15 @@ Também é apresentado o exemplo da tabela~\ref{tab:correlacao}, que aparece autom
 		7 & 8 \\
 		\hline
 	\end{tabular}
-	\fonte{Autoria própria.}
+	\fonte{Autoria prÃƒÂ³pria.}
 \end{table}
 
 
 
-\section{Equações}
+\section{EquaÃƒÂ§ÃƒÂµes}
 \label{sec:equacoes}
 
-A transformada de Laplace é dada na equação~\eqref{eq:laplace}, enquanto a equação~\eqref{eq:dft} apresenta a formulação da transformada discreta de Fourier bidimensional\footnote{Deve-se reparar na formatação esteticamente perfeita destas equações!}.
+A transformada de Laplace ÃƒÂ© dada na equaÃƒÂ§ÃƒÂ£o~\eqref{eq:laplace}, enquanto a equaÃƒÂ§ÃƒÂ£o~\eqref{eq:dft} apresenta a formulaÃƒÂ§ÃƒÂ£o da transformada discreta de Fourier bidimensional\footnote{Deve-se reparar na formataÃƒÂ§ÃƒÂ£o esteticamente perfeita destas equaÃƒÂ§ÃƒÂµes!}.
 
 \begin{equation}
 X(s) = \int\limits_{t = -\infty}^{\infty} x(t) \, \text{e}^{-st} \, dt
@@ -220,23 +220,23 @@ F(u, v) = \sum_{m = 0}^{M - 1} \sum_{n = 0}^{N - 1} f(m, n) \exp \left[ -j 2 \pi
 \label{eq:dft}
 \end{equation}
 
-\section{Siglas e símbolos}
+\section{Siglas e sÃƒÂ­mbolos}
 \label{sec:siglasSimbolos}
 
-O pacote \textsc{abn}\TeX\ permite ainda a definição de siglas e símbolos com indexação automática através dos comandos {\ttfamily \textbackslash sigla\{\}\{\}} e {\ttfamily \textbackslash simbolo\{\}\{\}}. Por exemplo, o significado das siglas \sigla{PPGSE}{Programa de Pós-graduação em Sistemas de Energia}, \sigla{DAELT}{Departamento Acadêmico de Eletrotécnica} e \sigla{UTFPR}{Universidade Tecnológica Federal do Paraná} aparecem automaticamente na lista de siglas, bem como o significado dos símbolos \simbolo{$\lambda$}{comprimento de onda}, \simbolo{$v$}{velocidade} e \simbolo{$f$}{frequência} aparecem automaticamente na lista de símbolos. Mais detalhes sobre o uso destes e outros comandos do \textsc{abn}\TeX\ são encontrados na sua documentação específica~\cite{abnTeX2009}.
+O pacote \textsc{abn}\TeX\ permite ainda a definiÃƒÂ§ÃƒÂ£o de siglas e sÃƒÂ­mbolos com indexaÃƒÂ§ÃƒÂ£o automÃƒÂ¡tica atravÃƒÂ©s dos comandos {\ttfamily \textbackslash sigla\{\}\{\}} e {\ttfamily \textbackslash simbolo\{\}\{\}}. Por exemplo, o significado das siglas \sigla{PPGSE}{Programa de PÃƒÂ³s-graduaÃƒÂ§ÃƒÂ£o em Sistemas de Energia}, \sigla{DAELT}{Departamento AcadÃƒÂªmico de EletrotÃƒÂ©cnica} e \sigla{UTFPR}{Universidade TecnolÃƒÂ³gica Federal do ParanÃƒÂ¡} aparecem automaticamente na lista de siglas, bem como o significado dos sÃƒÂ­mbolos \simbolo{$\lambda$}{comprimento de onda}, \simbolo{$v$}{velocidade} e \simbolo{$f$}{frequÃƒÂªncia} aparecem automaticamente na lista de sÃƒÂ­mbolos. Mais detalhes sobre o uso destes e outros comandos do \textsc{abn}\TeX\ sÃƒÂ£o encontrados na sua documentaÃƒÂ§ÃƒÂ£o especÃƒÂ­fica~\cite{abnTeX2009}.
 
 
 %---------- Terceiro Capitulo ----------
-\chapter{Conclusão}
+\chapter{ConclusÃƒÂ£o}
 \label{chap:conclusao}
 
-Espera-se que o uso do estilo de formatação \LaTeX\ adequado às Normas para Elaboração de Trabalhos Acadêmicos da UTFPR ({\ttfamily normas-utf-tex.cls}) facilite a escrita de documentos no âmbito desta instituição e aumente a produtividade de seus autores. Para usuários iniciantes em \LaTeX, além da bibliografia especializada já citada, existe ainda uma série de recursos~\cite{CTAN2009} e fontes de informação~\cite{TeX-Br2009,Wikibooks2009} disponíveis na Internet.
+Espera-se que o uso do estilo de formataÃƒÂ§ÃƒÂ£o \LaTeX\ adequado ÃƒÂ s Normas para ElaboraÃƒÂ§ÃƒÂ£o de Trabalhos AcadÃƒÂªmicos da UTFPR ({\ttfamily normas-utf-tex.cls}) facilite a escrita de documentos no ÃƒÂ¢mbito desta instituiÃƒÂ§ÃƒÂ£o e aumente a produtividade de seus autores. Para usuÃƒÂ¡rios iniciantes em \LaTeX, alÃƒÂ©m da bibliografia especializada jÃƒÂ¡ citada, existe ainda uma sÃƒÂ©rie de recursos~\cite{CTAN2009} e fontes de informaÃƒÂ§ÃƒÂ£o~\cite{TeX-Br2009,Wikibooks2009} disponÃƒÂ­veis na Internet.
 
-Recomenda-se o editor de textos Kile como ferramenta de composição de documentos em \LaTeX\ para usuários Linux. Para usuários Windows recomenda-se o editor \TeX nicCenter~\cite{TeXnicCenter2009} ou TexMaker. O \LaTeX\ normalmente já faz parte da maioria das distribuições Linux, mas no sistema operacional Windows é necessário instalar o software \textsc{MiK}\TeX~\cite{MiKTeX2009}.
+Recomenda-se o editor de textos Kile como ferramenta de composiÃƒÂ§ÃƒÂ£o de documentos em \LaTeX\ para usuÃƒÂ¡rios Linux. Para usuÃƒÂ¡rios Windows recomenda-se o editor \TeX nicCenter~\cite{TeXnicCenter2009} ou TexMaker. O \LaTeX\ normalmente jÃƒÂ¡ faz parte da maioria das distribuiÃƒÂ§ÃƒÂµes Linux, mas no sistema operacional Windows ÃƒÂ© necessÃƒÂ¡rio instalar o software \textsc{MiK}\TeX~\cite{MiKTeX2009}.
 
-Além disso, recomenda-se o uso de um gerenciador de referências como o JabRef~\cite{JabRef2009} ou Mendeley~\cite{Mendeley2009} para a catalogação bibliográfica em um arquivo \textsc{Bib}\TeX, de forma a facilitar citações através do comando {\ttfamily \textbackslash cite\{\}} e outros comandos correlatos do pacote \textsc{abn}\TeX. A lista de referências deste documento foi gerada automaticamente pelo software \LaTeX\ + \textsc{Bib}\TeX\ a partir do arquivo {\ttfamily reflatex.bib}, que por sua vez foi composto com o gerenciador de referências JabRef.
+AlÃƒÂ©m disso, recomenda-se o uso de um gerenciador de referÃƒÂªncias como o JabRef~\cite{JabRef2009} ou Mendeley~\cite{Mendeley2009} para a catalogaÃƒÂ§ÃƒÂ£o bibliogrÃƒÂ¡fica em um arquivo \textsc{Bib}\TeX, de forma a facilitar citaÃƒÂ§ÃƒÂµes atravÃƒÂ©s do comando {\ttfamily \textbackslash cite\{\}} e outros comandos correlatos do pacote \textsc{abn}\TeX. A lista de referÃƒÂªncias deste documento foi gerada automaticamente pelo software \LaTeX\ + \textsc{Bib}\TeX\ a partir do arquivo {\ttfamily reflatex.bib}, que por sua vez foi composto com o gerenciador de referÃƒÂªncias JabRef.
 
-O estilo de formatação \LaTeX\ da UTFPR e este exemplo de utilização foram elaborados por Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com) e Hugo Vieira Neto (hvieir@utfpr.edu.br), com contribuições de César Vargas Benitez. A adaptação para o PPGSE foi feita por Glauber Brante (gbrante@utfpr.edu.br). Sugestões de melhorias são bem-vindas.
+O estilo de formataÃƒÂ§ÃƒÂ£o \LaTeX\ da UTFPR e este exemplo de utilizaÃƒÂ§ÃƒÂ£o foram elaborados por Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com) e Hugo Vieira Neto (hvieir@utfpr.edu.br), com contribuiÃƒÂ§ÃƒÂµes de CÃƒÂ©sar Vargas Benitez. A adaptaÃƒÂ§ÃƒÂ£o para o PPGSE foi feita por Glauber Brante (gbrante@utfpr.edu.br). SugestÃƒÂµes de melhorias sÃƒÂ£o bem-vindas.
 
 
 
@@ -249,11 +249,11 @@ O estilo de formatação \LaTeX\ da UTFPR e este exemplo de utilização foram elabo
 
 %---------- Apendices (opcionais) ----------
 \apendice
-\chapter{Nome do Apêndice}
+\chapter{Nome do ApÃƒÂªndice}
 \label{chap:apendice}
 
 Use o comando {\ttfamily \textbackslash apendice} e depois comandos {\ttfamily \textbackslash chapter\{\}}
-para gerar títulos de apêndices.
+para gerar tÃƒÂ­tulos de apÃƒÂªndices.
 
 
 % ---------- Anexos (opcionais) ----------
@@ -262,7 +262,7 @@ para gerar títulos de apêndices.
 \label{chap:anexo}
 
 Use o comando {\ttfamily \textbackslash anexo} e depois comandos {\ttfamily \textbackslash chapter\{\}}
-para gerar títulos de anexos.
+para gerar tÃƒÂ­tulos de anexos.
 
 
 % --------- Ordenacao Afabetica da Lista de siglas --------

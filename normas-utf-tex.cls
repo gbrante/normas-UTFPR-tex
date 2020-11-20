@@ -1,8 +1,8 @@
-%% version 3.2
+Ôªø%% version 3.2
 %% normas-utf-tex.cls
 %% Copyright 200?-2011 Diogo Rosa Kuiaski <diogo.kuiaski@gmail.com>
 %% Copyright 200?-2011 Hugo Vieira Neto <hvieir@utfpr.edu.br>
-%% Copyright 2011      CÈsar M. Vargas BenÌtez <cesarvargasb@gmail.com>
+%% Copyright 2011      C√©sar M. Vargas Ben√≠tez <cesarvargasb@gmail.com>
 %% Copyright 2011-2017      Marcos Talau <talau@users.sourceforge.net>
 %
 % This work may be distributed and/or modified under the
@@ -19,7 +19,7 @@
 % 
 % This work consists of the file normas-utf-tex.cls
 
-% dependÍncia: abntex >= 0.9-beta2
+% depend√™ncia: abntex >= 0.9-beta2
 
 \NeedsTeXFormat{LaTeX2e}
 \def\input@path{{./abntex/}}
@@ -896,7 +896,7 @@
 % \@twosidetrue considera as paginas pares e impares.
 % A numeracao sempre fica no canto superior externo da pagina.
 % \@mparswitchtrue  inverte o tamanho das margens esquerda e
-% direita para p·ginas pares, pois as margens devem ser simÈtricas para p·ginas opostas.
+% direita para p√°ginas pares, pois as margens devem ser sim√©tricas para p√°ginas opostas.
 }
 
 %Altera o tamanho da indentacao do paragrafo
@@ -942,8 +942,8 @@
 
 
 %%% Outros Ajustes:
-\renewenvironment{quote}{\list{}{\leftmargin=4cm\rightmargin=0cm\footnotesize\singlespace}\item[]}{\endlist}  %ajuste para citacao direta: para mais de 3 linhas, deve estar em um par·grafo prÛprio, com recuo de 4cm, espacamento simples e fonte tamanho 10
+\renewenvironment{quote}{\list{}{\leftmargin=4cm\rightmargin=0cm\footnotesize\singlespace}\item[]}{\endlist}  %ajuste para citacao direta: para mais de 3 linhas, deve estar em um par√°grafo pr√≥prio, com recuo de 4cm, espacamento simples e fonte tamanho 10
 
-%% permite mais de trÍs nÌveis no sum·rio
+%% permite mais de tr√™s n√≠veis no sum√°rio
 \setcounter{secnumdepth}{10}
 \setcounter{tocdepth}{10}
