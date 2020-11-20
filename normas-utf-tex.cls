@@ -34,6 +34,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{lastpage}
 \RequirePackage{perpage}
+\RequirePackage[utf8]{inputenc}
 \PassOptionsToPackage{hyperindex=false}{hyperref}
 \PassOptionsToPackage{estilo=UTFPR}{tabela-simbolos}
 
@@ -109,18 +110,18 @@
 	\begin{titlepage}
 		\begin{center}
 		  \begin{espacosimples} 
-				\large\MakeUppercase{\ABNTinstituicaodata}\\
+				\MakeUppercase{\ABNTinstituicaodata}\\
 				\ABNTifnotempty{\UTFPRdepartamentodata}
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				\large\MakeUppercase{\UTFPRprogramadata}\par	
+				\MakeUppercase{\UTFPRprogramadata}\par	
 		\end{espacosimples}		
 	 \end{center}		
 		\vspace{12pt}	
 		\begin{center}
 			\begin{espacosimples}
-				\large\MakeUppercase{\ABNTautordata}\\
+				\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
@@ -129,12 +130,12 @@
 		\vspace{60pt}
 		\begin{center}
 		  \begin{espacosimples}
-			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
+			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
 			\end{espacosimples}
 		\end{center}
 		\vspace{12pt}
 		\begin{center}
-			\large\MakeUppercase{\UTFPRdocumentodata}%
+			\MakeUppercase{\UTFPRdocumentodata}%
 			\ABNTifnotempty{\UTFPRniveldata}
 			%CESAR230511{
 			%	\MakeUppercase{de \UTFPRniveldata}\par
@@ -174,20 +175,23 @@
 		\espaco{1.1}
 		\begin{center}
 			\begin{espacosimples}
-				\large\MakeUppercase{\ABNTautordata}\\
+				\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
 			\end{espacosimples}
 		\end{center}
-		\vspace{96pt}
+		\vspace{86pt}
 		\begin{center}
-			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
+			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 		\end{center}
-		\vspace{60pt}
+		\begin{center}
+			\ABNTchapterfont \UTFPRtitledata \par
+		\end{center}
+		\vspace{70pt}
 		\hspace{.45\textwidth}	
-		\begin{minipage}{.55\textwidth}
-			\begin{espacosimples}
+		\begin{minipage}{.5\textwidth}
+			\begin{espacosimples}{\footnotesize
 				\ABNTcomentariodata\par
                                 % 200611: mais um orientador:
                                 \UTFPRifnotempty{\UTFPRcoorientadorbdata}
@@ -204,13 +208,29 @@
                                   }
                                 }
 
-				\end{espacosimples}		
+				}\end{espacosimples}		
 		\end{minipage}
 		\vfill
 		\begin{center}
 			\MakeUppercase{\ABNTlocaldata}\\
 			\ABNTdatadata
 		\end{center}
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}\includegraphics[width=0.1\textwidth]{./nd.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite que outros façam download dos trabalhos e os compartilhem desde que atribuam crédito aos autores, mas sem que possam alterá-los de nenhuma forma ou utilizá-los para fins comerciais.}
+                \vfill
+            \end{minipage}
 	\end{titlepage}
 }
 
