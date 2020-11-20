@@ -109,18 +109,18 @@
 	\begin{titlepage}
 		\begin{center}
 		  \begin{espacosimples} 
-				\large\MakeUppercase{\ABNTinstituicaodata}\\
+				\MakeUppercase{\ABNTinstituicaodata}\\
 				\ABNTifnotempty{\UTFPRdepartamentodata}
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				\large\MakeUppercase{\UTFPRprogramadata}\par	
+				\MakeUppercase{\UTFPRprogramadata}\par	
 		\end{espacosimples}		
 	 \end{center}		
 		\vspace{12pt}	
 		\begin{center}
 			\begin{espacosimples}
-				\large\MakeUppercase{\ABNTautordata}\\
+				\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
@@ -129,12 +129,12 @@
 		\vspace{60pt}
 		\begin{center}
 		  \begin{espacosimples}
-			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
+			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
 			\end{espacosimples}
 		\end{center}
 		\vspace{12pt}
 		\begin{center}
-			\large\MakeUppercase{\UTFPRdocumentodata}%
+			\MakeUppercase{\UTFPRdocumentodata}%
 			\ABNTifnotempty{\UTFPRniveldata}
 			%CESAR230511{
 			%	\MakeUppercase{de \UTFPRniveldata}\par
@@ -174,20 +174,23 @@
 		\espaco{1.1}
 		\begin{center}
 			\begin{espacosimples}
-				\large\MakeUppercase{\ABNTautordata}\\
+				\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
 			\end{espacosimples}
 		\end{center}
-		\vspace{96pt}
+		\vspace{86pt}
 		\begin{center}
-			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
+			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 		\end{center}
-		\vspace{60pt}
+		\begin{center}
+			\ABNTchapterfont \UTFPRtitledata \par
+		\end{center}
+		\vspace{70pt}
 		\hspace{.45\textwidth}	
-		\begin{minipage}{.55\textwidth}
-			\begin{espacosimples}
+		\begin{minipage}{.5\textwidth}
+			\begin{espacosimples}{\footnotesize
 				\ABNTcomentariodata\par
                                 % 200611: mais um orientador:
                                 \UTFPRifnotempty{\UTFPRcoorientadorbdata}
@@ -204,7 +207,7 @@
                                   }
                                 }
 
-				\end{espacosimples}		
+				}\end{espacosimples}		
 		\end{minipage}
 		\vfill
 		\begin{center}
