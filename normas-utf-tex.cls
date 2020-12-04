@@ -62,6 +62,9 @@
 \providecommand{\UTFPRdocumentodata}{}
 \newcommand{\documento}[1]{\renewcommand{\UTFPRdocumentodata}{#1}}
 
+\providecommand{\UTFPRcursodata}{}
+\newcommand{\curso}[1]{\renewcommand{\UTFPRcursodata}{#1}}
+
 \providecommand{\UTFPRdocumentoinglesdata}{}
 \newcommand{\documentoingles}[1]{\renewcommand{\UTFPRdocumentoinglesdata}{#1}}
 
@@ -447,8 +450,7 @@
 	\begin{espacosimples}%
 		\setlength\parindent{0pt}
 		\setlength\parskip{12pt}
-		\UTFPRcitadata. \ABNTtitulodata. \pageref{LastPage} f. \UTFPRdocumentodata\ -- \UTFPRprogramadata,
-		\ABNTinstituicaodata. \ABNTlocaldata, \ABNTdatadata.\par
+		\UTFPRcitadata. {\bf \ABNTtitulodata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata.\par
 }%
 {
 		\par \textbf{Palavras-chave:} \UTFPRpalavraschavedata
@@ -468,8 +470,7 @@
 	\begin{espacosimples}%
 		\setlength\parindent{0pt}
 		\setlength\parskip{12pt}
-		\UTFPRcitadata. \UTFPRtitledata. \pageref{LastPage} f. \UTFPRdocumentodata\ -- \UTFPRprogramadata,
-		\ABNTinstituicaodata. \ABNTlocaldata, \ABNTdatadata. \par
+		\UTFPRcitadata. {\bf \UTFPRtitledata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata. \par
 }%
 {
 		\par \textbf{Keywords:} \UTFPRkeywordsdata
