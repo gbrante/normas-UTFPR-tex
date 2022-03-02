@@ -117,7 +117,8 @@
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				\MakeUppercase{\UTFPRprogramadata}\par	
+				%\MakeUppercase{\UTFPRprogramadata}
+				\par	
 		\end{espacosimples}		
 	 \end{center}		
 		\vspace{12pt}	
@@ -137,7 +138,7 @@
 		\end{center}
 		\vspace{12pt}
 		\begin{center}
-			\MakeUppercase{\UTFPRdocumentodata}%
+			%\MakeUppercase{\UTFPRdocumentodata}%
 			\ABNTifnotempty{\UTFPRniveldata}
 			%CESAR230511{
 			%	\MakeUppercase{de \UTFPRniveldata}\par
