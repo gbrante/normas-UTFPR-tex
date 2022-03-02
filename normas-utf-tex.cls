@@ -118,7 +118,8 @@
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				\MakeUppercase{\UTFPRprogramadata}\par	
+				%\MakeUppercase{\UTFPRprogramadata}
+				\par	
 		\end{espacosimples}		
 	 \end{center}		
 		\vspace{12pt}	
