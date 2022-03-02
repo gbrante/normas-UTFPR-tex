@@ -75,6 +75,24 @@
 \providecommand{\UTFPRtitulacaodata}{}
 \newcommand{\titulacao}[1]{\renewcommand{\UTFPRtitulacaodata}{#1}}
 
+\providecommand{\UTFPRlicencaCCBYdata}{}
+\newcommand{\licencaCCBY}[1]{\renewcommand{\UTFPRlicencaCCBYdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCdata}{}
+\newcommand{\licencaCCBYNC}[1]{\renewcommand{\UTFPRlicencaCCBYNCdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCNDdata}{}
+\newcommand{\licencaCCBYNCND}[1]{\renewcommand{\UTFPRlicencaCCBYNCNDdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCSAdata}{}
+\newcommand{\licencaCCBYNCSA}[1]{\renewcommand{\UTFPRlicencaCCBYNCSAdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNDdata}{}
+\newcommand{\licencaCCBYND}[1]{\renewcommand{\UTFPRlicencaCCBYNDdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYSAdata}{}
+\newcommand{\licencaCCBYSA}[1]{\renewcommand{\UTFPRlicencaCCBYSAdata}{#1}}
+
 \providecommand{\UTFPRunidadedata}{}
 \newcommand{\unidade}[1]{\renewcommand{\UTFPRunidadedata}{#1}}
 
@@ -219,6 +237,43 @@
 			\MakeUppercase{\ABNTlocaldata}\\
 			\ABNTdatadata
 		\end{center}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite compartilhamento, remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCNDdata}{
 			\vfill
 			\noindent
             \begin{minipage}[c]{0.25\linewidth}
@@ -232,9 +287,64 @@
             \end{minipage}
             \begin{minipage}[c]{0.75\linewidth}
                 \vfill
-                {\scriptsize Esta licença permite que outros façam download dos trabalhos e os compartilhem desde que atribuam crédito aos autores, mas sem que possam alterá-los de nenhuma forma ou utilizá-los para fins comerciais.}
+                {\scriptsize Esta licença permite download e compartilhamento do trabalho desde que sejam atribuídos créditos ao(s) autor(es), sem a possibilidade de alterá-lo ou utilizá-lo para fins comerciais. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
                 \vfill
             \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCSAdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}\includegraphics[width=0.1\textwidth]{./sa.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNDdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nd.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite compartilhamento do trabalho, mesmo para fins comerciais, sem a possibilidade de alterá-lo, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYSAdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./sa.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
 	\end{titlepage}
 }
 
