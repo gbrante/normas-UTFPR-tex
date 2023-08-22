@@ -117,6 +117,9 @@
 \providecommand{\UTFPRkeywordsdata}{}
 \newcommand{\keywords}[1]{\renewcommand{\UTFPRkeywordsdata}{#1}}
 
+\providecommand{\UTFPRautorizacaodata}{}
+\newcommand{\autorizacao}[1]{\renewcommand{\UTFPRautorizacaodata}{#1}}
+
 \newcommand{\UTFPRifnotempty}[3]{\ifthenelse{\not\equal{#1}{}}{#2}{#3}}
 
 %200611: mais coorientadores
@@ -131,42 +134,33 @@
 	\begin{titlepage}
 		\begin{center}
 		  \begin{espacosimples} 
-				\MakeUppercase{\ABNTinstituicaodata}\\
+				\large\ABNTchapterfont\MakeUppercase{\ABNTinstituicaodata}\\
 				\ABNTifnotempty{\UTFPRdepartamentodata}
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				%\MakeUppercase{\UTFPRprogramadata}
-				\par	
 		\end{espacosimples}		
 	 \end{center}		
-		\vspace{12pt}	
+		\vspace{60pt}	
 		\begin{center}
 			\begin{espacosimples}
-				\MakeUppercase{\ABNTautordata}\\
-				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
-				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
-				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
+				\large\ABNTchapterfont\MakeUppercase{\ABNTautordata}\\
+				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
+				\UTFPRifnotempty{\UTFPRautortresdata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
+				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
 			\end{espacosimples}
 		\end{center}
-		\vspace{60pt}
+		\vspace{80pt}
 		\begin{center}
 		  \begin{espacosimples}
-			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
+			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
 			\end{espacosimples}
 		\end{center}
-		\vspace{12pt}
-		\begin{center}
-			\MakeUppercase{\UTFPRdocumentodata}%
-			\ABNTifnotempty{\UTFPRniveldata}
-			%CESAR230511{
-			%	\MakeUppercase{de \UTFPRniveldata}\par
-			%}
-		\end{center}
+		\vspace{80pt}
 		\vfill
 		\begin{center}
-			\MakeUppercase{\ABNTlocaldata}\\
-			\ABNTdatadata
+			\ABNTchapterfont\MakeUppercase{\ABNTlocaldata}\\
+			\ABNTchapterfont\ABNTdatadata
 		\end{center}
 	\end{titlepage}
 }
@@ -197,7 +191,7 @@
 		\espaco{1.1}
 		\begin{center}
 			\begin{espacosimples}
-				\MakeUppercase{\ABNTautordata}\\
+				\large\ABNTchapterfont\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
@@ -207,6 +201,7 @@
 		\begin{center}
 			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 		\end{center}
+		\vspace{20pt}
 		\begin{center}
 			\ABNTchapterfont \UTFPRtitledata \par
 		\end{center}
@@ -234,8 +229,8 @@
 		\end{minipage}
 		\vfill
 		\begin{center}
-			\MakeUppercase{\ABNTlocaldata}\\
-			\ABNTdatadata
+			\ABNTchapterfont\MakeUppercase{\ABNTlocaldata}\\
+			\ABNTchapterfont\ABNTdatadata
 		\end{center}
 			\UTFPRifnotempty{\UTFPRlicencaCCBYdata}{
 			\vfill
@@ -581,7 +576,8 @@
 		\UTFPRcitadata. {\bf \ABNTtitulodata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata.\par
 }%
 {
-		\par \textbf{Palavras-chave:} \UTFPRpalavraschavedata
+		\par Palavras-chave: \UTFPRpalavraschavedata \par
+		\UTFPRautorizacaodata\
 	\end{espacosimples}
 	\newpage
 }
@@ -598,10 +594,10 @@
 	\begin{espacosimples}%
 		\setlength\parindent{0pt}
 		\setlength\parskip{12pt}
-		\UTFPRcitadata. {\bf \UTFPRtitledata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata. \par
+		\UTFPRcitadata. {\bf \UTFPRtitledata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata. Título original: \ABNTtitulodata\par
 }%
 {
-		\par \textbf{Keywords:} \UTFPRkeywordsdata
+		\par Keywords: \UTFPRkeywordsdata
 		\end{espacosimples}
 	\newpage
 }
