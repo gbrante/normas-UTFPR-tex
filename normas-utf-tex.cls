@@ -34,6 +34,7 @@
 \RequirePackage{ifthen}
 \RequirePackage{lastpage}
 \RequirePackage{perpage}
+\RequirePackage[utf8]{inputenc}
 \PassOptionsToPackage{hyperindex=false}{hyperref}
 \PassOptionsToPackage{estilo=UTFPR}{tabela-simbolos}
 
@@ -74,6 +75,24 @@
 \providecommand{\UTFPRtitulacaodata}{}
 \newcommand{\titulacao}[1]{\renewcommand{\UTFPRtitulacaodata}{#1}}
 
+\providecommand{\UTFPRlicencaCCBYdata}{}
+\newcommand{\licencaCCBY}[1]{\renewcommand{\UTFPRlicencaCCBYdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCdata}{}
+\newcommand{\licencaCCBYNC}[1]{\renewcommand{\UTFPRlicencaCCBYNCdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCNDdata}{}
+\newcommand{\licencaCCBYNCND}[1]{\renewcommand{\UTFPRlicencaCCBYNCNDdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNCSAdata}{}
+\newcommand{\licencaCCBYNCSA}[1]{\renewcommand{\UTFPRlicencaCCBYNCSAdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYNDdata}{}
+\newcommand{\licencaCCBYND}[1]{\renewcommand{\UTFPRlicencaCCBYNDdata}{#1}}
+
+\providecommand{\UTFPRlicencaCCBYSAdata}{}
+\newcommand{\licencaCCBYSA}[1]{\renewcommand{\UTFPRlicencaCCBYSAdata}{#1}}
+
 \providecommand{\UTFPRunidadedata}{}
 \newcommand{\unidade}[1]{\renewcommand{\UTFPRunidadedata}{#1}}
 
@@ -98,6 +117,9 @@
 \providecommand{\UTFPRkeywordsdata}{}
 \newcommand{\keywords}[1]{\renewcommand{\UTFPRkeywordsdata}{#1}}
 
+\providecommand{\UTFPRautorizacaodata}{}
+\newcommand{\autorizacao}[1]{\renewcommand{\UTFPRautorizacaodata}{#1}}
+
 \newcommand{\UTFPRifnotempty}[3]{\ifthenelse{\not\equal{#1}{}}{#2}{#3}}
 
 %200611: mais coorientadores
@@ -112,42 +134,33 @@
 	\begin{titlepage}
 		\begin{center}
 		  \begin{espacosimples} 
-				\MakeUppercase{\ABNTinstituicaodata}\\
+				\large\ABNTchapterfont\MakeUppercase{\ABNTinstituicaodata}\\
 				\ABNTifnotempty{\UTFPRdepartamentodata}
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				%\MakeUppercase{\UTFPRprogramadata}
-				\par	
 		\end{espacosimples}		
 	 \end{center}		
-		\vspace{12pt}	
+		\vspace{60pt}	
 		\begin{center}
 			\begin{espacosimples}
-				\MakeUppercase{\ABNTautordata}\\
-				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
-				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
-				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
+				\large\ABNTchapterfont\MakeUppercase{\ABNTautordata}\\
+				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
+				\UTFPRifnotempty{\UTFPRautortresdata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
+				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\ABNTchapterfont\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
 			\end{espacosimples}
 		\end{center}
-		\vspace{60pt}
+		\vspace{80pt}
 		\begin{center}
 		  \begin{espacosimples}
-			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
+			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
 			\end{espacosimples}
 		\end{center}
-		\vspace{12pt}
-		\begin{center}
-			%\MakeUppercase{\UTFPRdocumentodata}%
-			\ABNTifnotempty{\UTFPRniveldata}
-			%CESAR230511{
-			%	\MakeUppercase{de \UTFPRniveldata}\par
-			%}
-		\end{center}
+		\vspace{80pt}
 		\vfill
 		\begin{center}
-			\MakeUppercase{\ABNTlocaldata}\\
-			\ABNTdatadata
+			\ABNTchapterfont\MakeUppercase{\ABNTlocaldata}\\
+			\ABNTchapterfont\ABNTdatadata
 		\end{center}
 	\end{titlepage}
 }
@@ -178,7 +191,7 @@
 		\espaco{1.1}
 		\begin{center}
 			\begin{espacosimples}
-				\MakeUppercase{\ABNTautordata}\\
+				\large\ABNTchapterfont\MakeUppercase{\ABNTautordata}\\
 				\UTFPRifnotempty{\UTFPRautordoisdata}{\large\MakeUppercase{\UTFPRautordoisdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautortresdata}{\large\MakeUppercase{\UTFPRautortresdata}\\}{\vspace{18pt}}
 				\UTFPRifnotempty{\UTFPRautorquatrodata}{\large\MakeUppercase{\UTFPRautorquatrodata}\\}{\vspace{18pt}}
@@ -188,6 +201,7 @@
 		\begin{center}
 			\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 		\end{center}
+		\vspace{20pt}
 		\begin{center}
 			\ABNTchapterfont \UTFPRtitledata \par
 		\end{center}
@@ -215,9 +229,117 @@
 		\end{minipage}
 		\vfill
 		\begin{center}
-			\MakeUppercase{\ABNTlocaldata}\\
-			\ABNTdatadata
+			\ABNTchapterfont\MakeUppercase{\ABNTlocaldata}\\
+			\ABNTchapterfont\ABNTdatadata
 		\end{center}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite compartilhamento, remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCNDdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}\includegraphics[width=0.1\textwidth]{./nd.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite download e compartilhamento do trabalho desde que sejam atribuídos créditos ao(s) autor(es), sem a possibilidade de alterá-lo ou utilizá-lo para fins comerciais. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNCSAdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nc.eps}\includegraphics[width=0.1\textwidth]{./sa.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, para fins não comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYNDdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./nd.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-nd/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite compartilhamento do trabalho, mesmo para fins comerciais, sem a possibilidade de alterá-lo, desde que sejam atribuídos créditos ao(s) autor(es). Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
+			\UTFPRifnotempty{\UTFPRlicencaCCBYSAdata}{
+			\vfill
+			\noindent
+            \begin{minipage}[c]{0.25\linewidth}
+                \vspace{-0.6cm}
+                \begin{figure}[H]
+    			    \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt}{\centerline{\includegraphics[width=0.1\textwidth]{./cc.eps}\includegraphics[width=0.1\textwidth]{./by.eps}\includegraphics[width=0.1\textwidth]{./sa.eps}}}
+    			\end{figure}
+    			\vspace{-0.7cm}
+    			{\scriptsize \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt}{\centerline{4.0 Internacional}}}
+    			\vfill
+            \end{minipage}
+            \begin{minipage}[c]{0.75\linewidth}
+                \vfill
+                {\scriptsize Esta licença permite remixe, adaptação e criação a partir do trabalho, mesmo para fins comerciais, desde que sejam atribuídos créditos ao(s) autor(es) e que licenciem as novas criações sob termos idênticos. Conteúdos elaborados por terceiros, citados e referenciados nesta obra não são cobertos pela licença.}
+                \vfill
+            \end{minipage}
+			}{}
 	\end{titlepage}
 }
 
@@ -454,7 +576,8 @@
 		\UTFPRcitadata. {\bf \ABNTtitulodata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata.\par
 }%
 {
-		\par \textbf{Palavras-chave:} \UTFPRpalavraschavedata
+		\par Palavras-chave: \UTFPRpalavraschavedata \par
+		\UTFPRautorizacaodata\
 	\end{espacosimples}
 	\newpage
 }
@@ -471,10 +594,10 @@
 	\begin{espacosimples}%
 		\setlength\parindent{0pt}
 		\setlength\parskip{12pt}
-		\UTFPRcitadata. {\bf \UTFPRtitledata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata. \par
+		\UTFPRcitadata. {\bf \UTFPRtitledata}. \ABNTdatadata. \pageref{LastPage} f. \UTFPRdocumentodata\ (\UTFPRniveldata\ em \UTFPRcursodata) -- \ABNTinstituicaodata, \ABNTlocaldata, \ABNTdatadata. Título original: \ABNTtitulodata\par
 }%
 {
-		\par \textbf{Keywords:} \UTFPRkeywordsdata
+		\par Keywords: \UTFPRkeywordsdata
 		\end{espacosimples}
 	\newpage
 }

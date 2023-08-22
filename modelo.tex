@@ -16,16 +16,19 @@
 \urlstyle{same}
 %configuracao correta das referencias bibliograficas.
 \usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm,abnt-etal-cite=2,abnt-etal-list=0,abnt-thesis-year=both]{abntcite}
-
 \usepackage[brazil]{babel} % pacote portugues brasileiro
 \usepackage[utf8]{inputenc} % pacote para acentuacao direta
+
 \usepackage{amsmath,amsfonts,amssymb} % pacote matematico
 \usepackage{graphicx} % pacote grafico
 %\usepackage{times} % fonte times (substituida pelos dois comandos abaixo - padrao LATEX)
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[final]{pdfpages} % adicao da ata
-
+\usepackage{float}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 % ---------- Preambulo ----------
 \instituicao{Universidade TecnolÃ³gica Federal do ParanÃ¡} % nome da instituicao
@@ -37,6 +40,15 @@
 \nivel{Mestrado} % [Mestrado] ou [Doutorado]
 \curso{Sistemas de Energia}
 \titulacao{Mestre} % [Mestre] ou [Doutor]
+\autorizacao{(\cmark) NÃ£o autorizo a disponibilizaÃ§Ã£o de endereÃ§o de correio eletrÃ´nico para contato.\\
+(\xmark) Autorizo a disponibilizaÃ§Ã£o do seguinte correio eletrÃ´nico para contato: xxxx@xxx.xx} % AutorizaÃ§Ã£o de DivulgaÃ§Ã£o de e-mail para contato. Utilize \cmark na linha que preferir e \xmark na linha que nÃ£o refletir seu desejo
+%opÃ§Ãµes de licenÃ§a Creative Commons. Marque com X somente a que escolher
+\licencaCCBY{} %https://creativecommons.org/licenses/by/4.0/deed.pt
+\licencaCCBYNC{} %https://creativecommons.org/licenses/by-nc/4.0/deed.pt
+\licencaCCBYNCND{X} %https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt
+\licencaCCBYNCSA{} %https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt
+\licencaCCBYND{} %https://creativecommons.org/licenses/by-nd/4.0/deed.pt
+\licencaCCBYSA{} %https://creativecommons.org/licenses/by-sa/4.0/deed.pt
 
 \titulo{TÃ­tulo em PortuguÃªs} % titulo do trabalho em portugues
 \title{Title in English} % titulo do trabalho em ingles
@@ -47,7 +59,7 @@
 \palavraschave{Palavra-chave 1. Palavra-chave 2. ...} % palavras-chave do trabalho
 \keywords{Keyword 1. Keyword 2. ...} % palavras-chave do trabalho em ingles
 
-\comentario{\UTFPRdocumentodata\ apresentada ao \UTFPRprogramadata\ da \ABNTinstituicaodata\ como requisito parcial para obtenÃ§Ã£o do tÃ­tulo de ``\UTFPRtitulacaodata\ em Engenharia ElÃ©trica'' -- Ãrea de ConcentraÃ§Ã£o: \UTFPRareadata.}
+\comentario{\UTFPRdocumentodata\ apresentada como requisito parcial para obtenÃ§Ã£o do tÃ­tulo de ``\UTFPRtitulacaodata\ em Engenharia ElÃ©trica'' do \UTFPRprogramadata\ da \ABNTinstituicaodata.}
 
 \orientador{Nome do Orientador} % nome do orientador do trabalho
 %\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
@@ -55,7 +67,7 @@
 %\coorientador[Coorientadora:]{Nome da Coorientadora} % <- no caso de co-orientadora, usar esta sintaxe
 
 \local{Curitiba} % cidade
-\data{2022} % ano
+\data{2023} % ano
 
 
 % desativa hifenizacao mantendo o texto justificado.
@@ -64,7 +76,6 @@
 \hyphenpenalty=10000
 \hbadness=10000
 \sloppy
-
 
 %---------- Inicio do Documento ----------
 \begin{document}
@@ -98,7 +109,6 @@ Texto da ep\'igrafe.
 \begin{resumo}
 Texto do resumo (m\'aximo de 500 palavras).
 \end{resumo}
-
 %abstract
 \begin{abstract}
 Abstract text (maximum of 500 words).
@@ -127,8 +137,11 @@ Abstract text (maximum of 500 words).
 %\input{exper.tex}
 %\input{concl.tex}
 
+\newcommand\extraPages{1}
+\newcounter{savepage}
+\setcounter{savepage}{\value{page}+\extraPages}
+\setcounter{page}{\value{savepage}}
 
-\setcounter{page}{11}
 
 %---------- Primeiro Capitulo ----------
 \chapter{IntroduÃ§Ã£o}
