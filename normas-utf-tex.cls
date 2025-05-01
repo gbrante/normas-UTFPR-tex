@@ -1,4 +1,4 @@
-﻿%% version 3.2
+%% version 3.2
 %% normas-utf-tex.cls
 %% Copyright 200?-2011 Diogo Rosa Kuiaski <diogo.kuiaski@gmail.com>
 %% Copyright 200?-2011 Hugo Vieira Neto <hvieir@utfpr.edu.br>
@@ -39,7 +39,7 @@
 \PassOptionsToPackage{estilo=UTFPR}{tabela-simbolos}
 
 \LoadClass{abnt}
-
+\setboolean{ABNTcapsec}{false}
 \usepackage{caption}
 \DeclareCaptionType[name={quadro},listname={quadro}]{quadro}[Quadro]
 
@@ -56,6 +56,9 @@
 
 \providecommand{\UTFPRprogramadata}{}
 \newcommand{\programa}[1]{\renewcommand{\UTFPRprogramadata}{#1}}
+
+\providecommand{\UTFPRprogramaSigladata}{}
+\newcommand{\programaSigla}[1]{\renewcommand{\UTFPRprogramaSigladata}{#1}}
 
 \providecommand{\UTFPRareadata}{}
 \newcommand{\area}[1]{\renewcommand{\UTFPRareadata}{#1}}
@@ -507,21 +510,23 @@
 
 \newenvironment{dedicatoria}%
 {%
-	\if@openright\cleardoublepage\else\clearpage\fi%
-	\setchaptertype{}
-	\pretextualchapter{}
-	\vfill
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \setchaptertype{}
+    \pretextualchapter{}
+    \vfill
 	\begin{flushright}
-		\begin{minipage}{.75\textwidth}
-			\begin{espacosimples}%
-				\setlength\parindent{0pt}
-				\setlength\parskip{12pt}
-}%
+    \begin{minipage}{.75\textwidth} % Mantém o minipage
+        \begin{flushright} % Adiciona o flushright dentro do minipage
+            \begin{espacosimples}%
+                \setlength\parindent{0pt}
+                \setlength\parskip{12pt}
+}% 
 {
-			\end{espacosimples}
-		\end{minipage}
+            \end{espacosimples}
+        \end{flushright} % Fecha o flushright
+    \end{minipage} % Fecha o minipage
 	\end{flushright}
-	\newpage
+    \newpage
 }
 
 
@@ -549,14 +554,16 @@
 	\pretextualchapter{}
 	\vfill
 	\begin{flushright}
-		\begin{minipage}{.75\textwidth}
+	\begin{minipage}{.75\textwidth} % Mantém o minipage
+		\begin{flushright} % Adiciona o flushright dentro do minipage
 			\begin{espacosimples}%
 				\setlength\parindent{0pt}
 				\setlength\parskip{12pt}
-}%
-{
+	}% 
+	{
 			\end{espacosimples}
-		\end{minipage}
+		\end{flushright} % Fecha o flushright
+	\end{minipage} % Fecha o minipage
 	\end{flushright}
 	\newpage
 }
@@ -610,7 +617,7 @@
 \newcommand{\figfillnum}[1]
 {
 	{\hspace{0em}\normalfont\dotfill}\nobreak
-	\hb@xt@\@pnumwidth{\hfil\normalfont #1}{}
+	\hb@xt@\@pnumwidth{\hfil\bfseries #1}{}
 	\begin{spacing}{\taxaespacomeio}\par\end{spacing}
 }
 
@@ -638,7 +645,7 @@
 	\parindent -1.3em
 	\@tempdima 2.8em
 	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-        {Figura \normalfont #1 \noindent }\nobreak \figfillnum{#2}
+        {\bfseries Figura #1 \noindent }\nobreak \figfillnum{#2}
 }
 
 
@@ -649,7 +656,7 @@
 \newcommand{\tabfillnum}[1]
 {
 	{\hspace{0em}\normalfont\dotfill}\nobreak
-	\hb@xt@\@pnumwidth{\hfil\normalfont #1}{}
+	\hb@xt@\@pnumwidth{\hfil\bfseries #1}{}
 	\begin{spacing}{\taxaespacomeio}\par\end{spacing}
 }
 
@@ -678,7 +685,7 @@
 	\@tempdima 2.8em
 	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
 	%{\MakeUppercase{Tabela \normalfont #1}}\nobreak \tabfillnum{#2}
-	{Tabela \normalfont #1}\nobreak \tabfillnum{#2} % 
+	{\bfseries Tabela #1}\nobreak \tabfillnum{#2} % 
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -797,7 +804,7 @@
 	\ifnum
 		\c@tocdepth > \m@ne
 		\addpenalty{-\@highpenalty}%
-		\setlength\@tempdima{1.5em}%
+		\setlength\@tempdima{5em}%
 		\begingroup
 			\ifthenelse{\boolean{ABNTpagenumstyle}}
 			{
@@ -828,7 +835,7 @@
 {
 	\ifnum \c@tocdepth >\m@ne
 		\addpenalty{-\@highpenalty}%
-		\setlength\@tempdima{2em}%
+		\setlength\@tempdima{5em}%
 		\begingroup
 			\ifthenelse{\boolean{ABNTpagenumstyle}}
 				{\renewcommand{\@pnumwidth}{1.6em}}
@@ -837,8 +844,8 @@
 			\parfillskip -\@pnumwidth
 			\advance\leftskip\@tempdima
 			\hskip -\leftskip
-                        #1\hspace{0.4em}\nobreak\dotfill\nobreak
-			\hb@xt@\@pnumwidth{\hss{#2}}
+                        {\bfseries #1}\hspace{0.4em}\nobreak\bfseries\dotfill\nobreak
+			\hb@xt@\@pnumwidth{\hss{\bfseries #2}}
 			\begin{spacing}{\taxaespacomeio}\par\end{spacing}
 			\penalty\@highpenalty
 		\endgroup
@@ -854,7 +861,15 @@
 \let\realsection\section
 \renewcommand{\section}[2][uppercase]
 {
-  \ifthenelse{\equal{#1}{nouppercase}}{\realsection{#2}}{\realsection{\MakeUppercase{#2}}}
+  \ifthenelse{\equal{#1}{nouppercase}}{\realsection{{\bf #2}}}{\realsection{{\bf #2}}}
+}
+% Redefine the \subsubsection command to underline the number
+\renewcommand{\subsubsection}[1]
+{
+    \refstepcounter{subsubsection}% Increment the counter
+	\addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}#1}% Adiciona ao sumário
+    \noindent\underline{\thesubsubsection~#1}\par% Underline the number and display the title
+    \vspace{0.5em}% Add spacing after the title
 }
 
 %Altera forma de montagem das subsecoes
@@ -862,7 +877,7 @@
 {
 	\ifnum \c@tocdepth >\m@ne
 		\addpenalty{-\@highpenalty}%
-		\setlength\@tempdima{2.5em}%
+		\setlength\@tempdima{5em}%
 		\begingroup
 			\renewcommand{\@pnumwidth}{1.6em}
 			\parindent \z@ \rightskip \@pnumwidth
@@ -876,27 +891,69 @@
 		\endgroup
 	\fi
 }
-
 %Altera forma de montagem das subsubsecoes
-\renewcommand{\l@subsubsection}[2]
+\renewcommand*{\l@subsubsection}[2]
 {
+    \ifnum \c@tocdepth >\m@ne
+        \addpenalty{-\@highpenalty}%
+        \setlength\@tempdima{5em}%
+        \begingroup
+            \renewcommand{\@pnumwidth}{1.6em}
+            \parindent \z@ \rightskip \@pnumwidth
+            \parfillskip -\@pnumwidth
+            \advance\leftskip\@tempdima
+            \hskip -\leftskip
+            \underline{\makebox[\dimexpr\linewidth-\@pnumwidth][l]{#1\dotfill}\makebox[\@pnumwidth][r]{#2}}% Sublinha tudo
+            \begin{spacing}{\taxaespacomeio}\par\end{spacing}
+            \penalty\@highpenalty
+        \endgroup
+    \fi
+}
+
+% Define the counter for subsubsubsection
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
+
+% Define the \subsubsubsection command
+\newcommand{\subsubsubsection}[1]{%
+  \refstepcounter{subsubsubsection}%
+  \phantomsection%
+  \hypertarget{subsubsubsection.\thesubsubsubsection}{}%
+
+  % TOC com link funcional para o alvo acima
+  \addtocontents{toc}{%
+    \protect\contentsline{subsubsubsection}%
+      {\protect\numberline{\thesubsubsubsection}#1}%
+      {\thepage}%
+      {subsubsubsection.\thesubsubsubsection}%
+  }%
+
+  % bookmark manual
+  \pdfbookmark[4]{#1}{subsubsubsection.\thesubsubsubsection}%
+
+  % Título visível
+  \noindent\textit{\thesubsubsubsection}\hspace{0.5em}\textit{#1}\par%
+  \vspace{0.5em}%
+}
+
+% Define the \l@subsubsubsection command for the table of contents
+\newcommand{\l@subsubsubsection}[2]{%
 	\ifnum \c@tocdepth >\m@ne
 		\addpenalty{-\@highpenalty}%
-		\setlength\@tempdima{3em}%
+		\setlength\@tempdima{5em}%
 		\begingroup
 			\renewcommand{\@pnumwidth}{1.6em}
 			\parindent \z@ \rightskip \@pnumwidth
 			\parfillskip -\@pnumwidth
 			\advance\leftskip\@tempdima
 			\hskip -\leftskip
-			#1\hspace{0.4em}\nobreak\dotfill\nobreak
-			\hb@xt@\@pnumwidth{\hss{#2}}
+			\textit{#1\hspace{0.4em}\nobreak\dotfill\nobreak
+			\hb@xt@\@pnumwidth{\hss{#2}}}
 			\begin{spacing}{\taxaespacomeio}\par\end{spacing}
 			\penalty\@highpenalty
 		\endgroup
 	\fi
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPITULOS
@@ -904,7 +961,7 @@
 % Altera o tamanho das fontes
 \renewcommand{\ABNTchapterfont}{\bfseries}
 \renewcommand{\ABNTchaptersize}{\normalsize}
-\renewcommand{\ABNTsectionfont}{\normalfont}
+\renewcommand{\ABNTsectionfont}{\bfseries}
 %\providecommand{\ABNTsectionfontsize}{}
 \renewcommand{\ABNTsectionfontsize}{\normalsize}
 %\providecommand{\ABNTsubsectionfont}{}
@@ -915,7 +972,10 @@
 \renewcommand{\ABNTsubsubsectionfont}{\normalfont}
 %\providecommand{\ABNTsubsubsectionfontsize}{}
 \renewcommand{\ABNTsubsubsectionfontsize}{\normalsize}
+\renewcommand{\ABNTsubsubsubsectionfont}{\normalfont}
+\renewcommand{\ABNTsubsubsubsectionfontsize}{\normalsize}
 \renewcommand{\ABNTanapsize}{\normalsize}
+
 
 % Altera titulo das subsecoes (lowercase)
 \def\ABNTsect#1#2#3#4#5#6[#7]#8{%
@@ -933,8 +993,8 @@
           \interlinepenalty \@M
 					\ifnum #2<\c@secnumdepth%
 	          \ifthenelse{\boolean{ABNTcapsec}}
-	             %{\MakeUppercase{#8}}{#8}\@@par%
-				 %	\else%
+	             {\MakeUppercase{#8}}{#8}\@@par%
+				 	\else%
 	             {#8}\@@par% lowercase
 					\fi}%
     \endgroup
@@ -1040,21 +1100,21 @@
 	\vskip\abovecaptionskip
 	\sbox\@tempboxa{{\captionfonts \textbf{#1 -- #2}}}%
 	\ifdim \wd\@tempboxa >\hsize
-		{\captionfonts \textbf{#1 -- #2}\par}
+		\centerline{{\captionfonts \textbf{#1 -- #2}\par}}
 	\else
-		\hbox to\hsize{\box\@tempboxa\hfil}%
+		\hbox to\hsize{\hfil\box\@tempboxa\hfil}%
 	\fi
 	\vskip\belowcaptionskip
 }
 
 \newcommand{\fonte}[1]
 {
-	\begin{flushleft}
+	\begin{center}
 		\begin{spacing}{0.4}
 			\par
 		\end{spacing}
 		\small{\textbf{Fonte: #1}}
-	\end{flushleft}
+	\end{center}
 }
 
 \renewcommand{\fnum@figure}{\textbf{\figurename~\thefigure}}

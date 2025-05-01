@@ -11,7 +11,7 @@
 
 % force A4 paper format
 \special{papersize=210mm,297mm}
-\usepackage[hidelinks,plainpages=true, bookmarks=true, breaklinks, pdfstartview=FitH,pdftitle={Nome da Teste},pdfauthor={Nome do autor},pdfsubject={Assunto do documento},pdfkeywords={Palavras-chave}]{hyperref}
+\usepackage[hidelinks,plainpages=true, bookmarks=true, bookmarksdepth=6, breaklinks, pdfstartview=FitH,pdftitle={Nome da Teste},pdfauthor={Nome do autor},pdfsubject={Assunto do documento},pdfkeywords={Palavras-chave}]{hyperref}
 \usepackage[hyphenbreaks]{breakurl}
 \urlstyle{same}
 %configuracao correta das referencias bibliograficas.
@@ -32,7 +32,9 @@
 
 % ---------- Preambulo ----------
 \instituicao{Universidade TecnolÃ³gica Federal do ParanÃ¡} % nome da instituicao
+\instituicaoSigla{UTFPR} % nome da instituicao
 \programa{Programa de PÃ³s-GraduaÃ§Ã£o em Sistemas de Energia} % nome do programa
+\programaSigla{PPGSE} % nome do programa
 \area{AutomaÃ§Ã£o e Sistemas de Energia} % area de concentracao
 
 \documento{DissertaÃ§Ã£o} % [Dissertacao] ou [Tese]
@@ -56,10 +58,10 @@
 \autor{Nome Completo} % autor do trabalho
 \cita{SOBRENOME, Nome} % sobrenome (maiusculas), nome do autor do trabalho
 
-\palavraschave{Palavra-chave 1. Palavra-chave 2. ...} % palavras-chave do trabalho
-\keywords{Keyword 1. Keyword 2. ...} % palavras-chave do trabalho em ingles
+\palavraschave{Palavra-chave 1; Palavra-chave 2; ...} % palavras-chave do trabalho
+\keywords{Keyword 1; Keyword 2; ...} % palavras-chave do trabalho em ingles
 
-\comentario{\UTFPRdocumentodata\ apresentada como requisito parcial para obtenÃ§Ã£o do tÃ­tulo de ``\UTFPRtitulacaodata\ em Engenharia ElÃ©trica'' do \UTFPRprogramadata\ da \ABNTinstituicaodata.}
+\comentario{\UTFPRdocumentodata\ apresentada como requisito para obtenÃ§Ã£o do tÃ­tulo de ``\UTFPRtitulacaodata\ em Engenharia ElÃ©trica'' do \UTFPRprogramadata\ (\UTFPRprogramaSigladata) da \ABNTinstituicaodata\ (\ABNTinstituicaoSigladata).}
 
 \orientador{Nome do Orientador} % nome do orientador do trabalho
 %\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
@@ -67,7 +69,7 @@
 %\coorientador[Coorientadora:]{Nome da Coorientadora} % <- no caso de co-orientadora, usar esta sintaxe
 
 \local{Curitiba} % cidade
-\data{2023} % ano
+\data{2025} % ano
 
 
 % desativa hifenizacao mantendo o texto justificado.
@@ -240,6 +242,27 @@ F(u, v) = \sum_{m = 0}^{M - 1} \sum_{n = 0}^{N - 1} f(m, n) \exp \left[ -j 2 \pi
 
 O pacote \textsc{abn}\TeX\ permite ainda a definiÃ§Ã£o de siglas e sÃ­mbolos com indexaÃ§Ã£o automÃ¡tica atravÃ©s dos comandos {\ttfamily \textbackslash sigla\{\}\{\}} e {\ttfamily \textbackslash simbolo\{\}\{\}}. Por exemplo, o significado das siglas \sigla{PPGSE}{Programa de PÃ³s-GraduaÃ§Ã£o em Sistemas de Energia}, \sigla{DAELT}{Departamento AcadÃªmico de EletrotÃ©cnica} e \sigla{UTFPR}{Universidade TecnolÃ³gica Federal do ParanÃ¡} aparecem automaticamente na lista de siglas, bem como o significado dos sÃ­mbolos \simbolo{$\lambda$}{comprimento de onda}, \simbolo{$v$}{velocidade} e \simbolo{$f$}{frequÃªncia} aparecem automaticamente na lista de sÃ­mbolos. Mais detalhes sobre o uso destes e outros comandos do \textsc{abn}\TeX\ sÃ£o encontrados na sua documentaÃ§Ã£o especÃ­fica~\cite{abnTeX2009}.
 
+Segue agora um exemplo de SeÃ§Ã£o secundÃ¡ria (\ref{sec:secundaria})
+
+\section{SeÃ§Ã£o secundÃ¡ria}
+\label{sec:secundaria}
+
+Segue agora um exemplo de SeÃ§Ã£o terciÃ¡ria (\ref{subsec:terciaria})
+
+\subsection{SeÃ§Ã£o terciÃ¡ria}
+\label{subsec:terciaria}
+
+Segue agora um exemplo de SeÃ§Ã£o quaternÃ¡ria (\ref{subsubsec:quaternaria})
+
+\subsubsection{SeÃ§Ã£o quaternÃ¡ria}
+\label{subsubsec:quaternaria}
+
+Segue agora um exemplo de SeÃ§Ã£o quinÃ¡ria (\ref{subsubsubsec:quinaria})
+
+\subsubsubsection{SeÃ§Ã£o quinÃ¡ria}
+\label{subsubsubsec:quinaria}
+
+NÃ£o existem mais nÃ­veis de SeÃ§Ã£o.
 
 %---------- Terceiro Capitulo ----------
 \chapter{ConclusÃ£o}

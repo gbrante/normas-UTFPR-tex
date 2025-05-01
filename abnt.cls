@@ -1061,6 +1061,12 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
                            {1.5ex \@plus .2ex}%
                            {\espaco{simples}\normalfont%
                             \ABNTsubsubsectionfont\ABNTsubsubsectionfontsize}}
+
+%\renewcommand\subsubsubsection{\ABNTstartsection{subparagraphsubsubsection}{4}{\z@}%
+%                            {-3.25ex\@plus -1ex \@minus -.2ex}%
+%                            {1.5ex \@plus .2ex}%
+%                            {\espaco{simples}\normalfont%
+%                             \ABNTsubsubsubsectionfont\ABNTsubsubsubsectionfontsize}}
 \renewcommand\paragraph{\ABNTstartsection{paragraph}{4}{\z@}%
                            {3.25ex \@plus1ex \@minus.2ex}%
                            {-1em}%
@@ -1112,16 +1118,16 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
          \ifthenelse{\boolean{ABNTAnApName}}{
            \ifthenelse{\equal{#1}{}}
               {\ABNTaddcontentsline{toc}{chapter}%
-                  {\anapchaptername{} \thechapter}}
+                  {\hspace{4.4em}\anapchaptername{} \thechapter}}
               {\ABNTaddcontentsline{toc}{chapter}%
-                  {\anapchaptername{} \thechapter{} \ABNTtravessao{} #1}}
+                  {\hspace{4.4em}\anapchaptername{} \thechapter{} \ABNTtravessao{} #1}}
          }
          {
           \ABNTaddcontentsline{toc}{chapter}%
-                   {\protect\numberline{\thechapter}#1}
+                   {\hspace{4.4em}\protect\numberline{\thechapter}#1}
          }  
        \else
-         \ABNTaddcontentsline{toc}{chapter}{#1}
+         \ABNTaddcontentsline{toc}{\hspace{4.4em}chapter}{#1}
        \fi
        \par
       }
@@ -1133,7 +1139,7 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
   {%
 %  \noindent\rule{\textwidth}{1.7pt}\\\par
   \normalfont\ABNTchapterfont\ABNTanapsize
-  \espaco{simples}
+  \espaco{simples}  
   \ifthenelse{\boolean{ABNTAnApIndicativoIndent}}
     {\ifthenelse{\boolean{ABNTCapAnnexAppendix}}
        {\settowidth{\ABNTanapindent}{\MakeUppercase{\anapchaptername}
@@ -1160,7 +1166,7 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
          {\ifthenelse{\boolean{ABNTCapAnnexAppendix}}
             {\MakeUppercase{\anapchaptername}}
             {\anapchaptername}
-          \thechapter{} \ABNTtravessao{} \ABNTaposindicativoanap
+            \centering\thechapter{} \ABNTtravessao{} \ABNTaposindicativoanap
             \ifthenelse{\boolean{ABNTcapchap}}%
               {\MakeUppercase{#1}}%
               {#1}}
@@ -1265,7 +1271,8 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
    \@afterindentfalse%
    \@mkboth{\ABNTbibliographyname}{\ABNTbibliographyname}% end \chapter*{\ABNTbibliographyname...}
    \ifthenelse{\boolean{ABNTincludeintoc}}%
-      {\ABNTaddcontentsline{toc}{chapter}{\ABNTbibliographyname}}%
+      {\phantomsection
+        \ABNTaddcontentsline{toc}{chapter}{\hspace{4.4em}\ABNTbibliographyname}}%
       {}%
     \if@twocolumn%
       \@topnewpage[\@makeschapterhead{\ABNTbibliographyname}]%
@@ -1367,6 +1374,9 @@ Para mais informacoes, leia o manual da classe.\MessageBreak%
 
 \providecommand{\ABNTinstituicaodata}{}
 \newcommand{\instituicao}[1]{\renewcommand{\ABNTinstituicaodata}{#1}}
+
+\providecommand{\ABNTinstituicaoSigladata}{}
+\newcommand{\instituicaoSigla}[1]{\renewcommand{\ABNTinstituicaoSigladata}{#1}}
 
 \providecommand{\ABNTautordata}{}
 \let\oldauthor\author\relax
