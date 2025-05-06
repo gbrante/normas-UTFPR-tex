@@ -27,6 +27,7 @@ makeindex modelo.idx
 bibtex modelo
 pdflatex modelo
 bibtex modelo
+pdflatex modelo
 sort modelo.lsg > modelo2.lsg
 del modelo.lsg
 copy modelo2.lsg modelo.lsg
