@@ -639,11 +639,11 @@
 
 \renewcommand*{\l@figure}[2]
 {
-	\leftskip 2.4em
-	\rightskip 1.8em
+	\leftskip 2.8em
+	\rightskip 0em
 	\parfillskip -\rightskip
-	\parindent -1.3em
-	\@tempdima 2.8em
+	\parindent -2em
+	\@tempdima 3em
 	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
         {\bfseries Figura #1 \noindent }\nobreak \figfillnum{#2}
 }
@@ -678,11 +678,11 @@
 
 \renewcommand*{\l@table}[2]
 {
-	\leftskip 2.4em % 3.4em
-	\rightskip 1.8em
+	\leftskip 2.8em % 3.4em
+	\rightskip 0em
 	\parfillskip -\rightskip
-	\parindent -1.3em
-	\@tempdima 2.8em
+	\parindent -2em
+	\@tempdima 3em
 	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
 	%{\MakeUppercase{Tabela \normalfont #1}}\nobreak \tabfillnum{#2}
 	{\bfseries Tabela #1}\nobreak \tabfillnum{#2} % 
@@ -1100,7 +1100,9 @@
 	\vskip\abovecaptionskip
 	\sbox\@tempboxa{{\captionfonts \textbf{#1 -- #2}}}%
 	\ifdim \wd\@tempboxa >\hsize
-		\centerline{{\captionfonts \textbf{#1 -- #2}\par}}
+	\begin{center}
+		{\captionfonts \textbf{#1 -- #2}\par}
+	\end{center}
 	\else
 		\hbox to\hsize{\hfil\box\@tempboxa\hfil}%
 	\fi
