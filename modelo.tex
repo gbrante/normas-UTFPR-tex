@@ -6,17 +6,18 @@
 %%          (2011) CÃ©sar M. Vargas Benitez <cesarvargasb@gmail.com>
 %%          (2015) Glauber Gomes de Oliveira Brante <gbrante@utfpr.edu.br>
 
+\ifdefined\pdfminorversion\pdfminorversion=7\fi
 \documentclass[openright]{normas-utf-tex} %openright = o capitulo comeca sempre em paginas impares
 %\documentclass[oneside]{normas-utf-tex} %oneside = para documentos com numero de paginas menor que 100 (apenas frente da folha)
 
 % force A4 paper format
 \special{papersize=210mm,297mm}
-\usepackage[hidelinks,plainpages=true, bookmarks=true, bookmarksdepth=6, breaklinks, pdfstartview=FitH,pdftitle={Nome da Teste},pdfauthor={Nome do autor},pdfsubject={Assunto do documento},pdfkeywords={Palavras-chave}]{hyperref}
+\usepackage[hidelinks,plainpages=true, bookmarks=true, bookmarksdepth=6, breaklinks, pdfstartview=FitH,pdftitle={TÃ­tulo da DissertaÃ§Ã£o},pdfauthor={Nome do(a) autor(a)},pdfsubject={DissertaÃ§Ã£o de Mestrado},pdfkeywords={Palavra-chave 1, Palavra-chave 2, ...}]{hyperref}
 \usepackage[hyphenbreaks]{breakurl}
 \urlstyle{same}
 %configuracao correta das referencias bibliograficas.
 \usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm,abnt-etal-cite=2,abnt-etal-list=0,abnt-thesis-year=both]{abntcite}
-\usepackage[brazil]{babel} % pacote portugues brasileiro
+\usepackage[brazilian]{babel} % pacote portugues brasileiro
 \usepackage[utf8]{inputenc} % pacote para acentuacao direta
 
 \usepackage{amsmath,amsfonts,amssymb} % pacote matematico
@@ -55,8 +56,8 @@
 \titulo{TÃ­tulo em PortuguÃªs} % titulo do trabalho em portugues
 \title{Title in English} % titulo do trabalho em ingles
 
-\autor{Nome Completo} % autor do trabalho
-\cita{SOBRENOME, Nome} % sobrenome (maiusculas), nome do autor do trabalho
+\autor{Nome Completo} % autor(a) do trabalho
+\cita{SOBRENOME, Nome} % sobrenome (maiusculas), nome do autor(a) do trabalho
 
 \palavraschave{Palavra-chave 1; Palavra-chave 2; ...} % palavras-chave do trabalho
 \keywords{Keyword 1; Keyword 2; ...} % palavras-chave do trabalho em ingles
@@ -69,8 +70,7 @@
 %\coorientador[Coorientadora:]{Nome da Coorientadora} % <- no caso de co-orientadora, usar esta sintaxe
 
 \local{Curitiba} % cidade
-\data{2025} % ano
-
+\data{\the\year{}} % ano
 
 % desativa hifenizacao mantendo o texto justificado.
 \tolerance=1
@@ -79,7 +79,12 @@
 \hbadness=10000
 \sloppy
 
-%---------- Inicio do Documento ----------
+% Ordena a lista de siglas automaticamente antes de cada leitura do .lsg
+% Usa texlua (embutido no TeX Live/MiKTeX) para compatibilidade com Windows, Linux e Overleaf
+% Requer compilacao com -shell-escape (pdflatex -shell-escape)
+\immediate\write18{texlua sort-siglas.lua \jobname}
+
+%--------------------------------------Inicio do Documento-----------------------------------------
 \begin{document}
 \pdfstringdefDisableCommands{%
 	\let\MakeUppercase\relax
@@ -87,10 +92,17 @@
 \capa % geracao automatica da capa
 \folhaderosto % geracao automatica da folha de rosto
 
-
-% insercao da ATA
-%\includepdf{ata.pdf}
-
+% insercao da folha de aprovacao
+\ifpdf
+\includepdf{folhaaprovacao.pdf}
+\else
+\immediate\write18{gs -dALLOWPSTRANSPARENCY -dCompatibilityLevel=1.5 -dNOPAUSE -dBATCH -sDEVICE=eps2write -dEPSFitPage -g5950x8420 -r600 -sOutputFile=folhaaprovacao.eps folhaaprovacao.pdf}
+\newpage
+\thispagestyle{empty}
+  \vspace*{-\topmargin}\vspace{-\headheight}\vspace{-\headsep}\vspace{-1.27in}\vspace{-\voffset}%
+\hspace*{-\oddsidemargin}\hspace{-0.6in}\hspace{-\hoffset}%
+\centerline{\includegraphics[width=\paperwidth, keepaspectratio=true]{folhaaprovacao.eps}}
+\fi
 
 % dedicatoria
 \begin{dedicatoria}
@@ -140,7 +152,7 @@ Abstract text (maximum of 500 words).
 %\input{exper.tex}
 %\input{concl.tex}
 
-\newcommand\extraPages{1}
+\newcommand\extraPages{0}
 \newcounter{savepage}
 \setcounter{savepage}{\value{page}+\extraPages}
 \setcounter{page}{\value{savepage}}

@@ -526,7 +526,7 @@ FUNCTION {format.single.name}
 {
 s nameptr get.person 'r :=
 abnt.last.names
-  {r #1 "{ll}{ jj}" format.name$ "u" change.case$
+  {"\MakeUppercase{" r #1 "{ll}{ jj}" format.name$ * "}" *
    abnt.full.initials
     {r #1 "{, ff}{ vv}" format.name$ *}
     {r #1 "{, f.}{ vv}" format.name$ *}
@@ -534,7 +534,7 @@ abnt.last.names
   {%r #1 is.composed.von {r #1 recompose.name 'r :=} 'skip$ if$
    r #1 "{ll}" format.name$
    #1 "{ll}" format.name$
-   r #1 "{ jj}" format.name$ * "u" change.case$
+   r #1 "{ jj}" format.name$ * "\MakeUppercase{" swap$ * "}" *
    abnt.full.initials
     {r #1 "{, ff}{ vv}" format.name$ *
      r #1 "{ll}" format.name$
@@ -1305,7 +1305,7 @@ FUNCTION {format.names.for.label2} %abnt-alf only
        {s nameptr "{ll}" format.name$ #1 "{ll}" format.name$
         s nameptr "{ jj}" format.name$ *}
      if$
-     abnt.cite.style #0 = {"u" change.case$} 'skip$ if$ 't :=
+     abnt.cite.style #0 = {"\MakeUppercase{" swap$ * "}" *} 'skip$ if$ 't :=
       nameptr #1 >
         {namesleft #1 >
             { numnames abnt.etal.cite > 
@@ -1340,9 +1340,9 @@ FUNCTION {format.title.for.label}
   while$
 s t = %title equals first word, dont use bbl.ldots
   {t  "}{" * t
-  abnt.cite.style #0 = {"u" change.case$ * } 'skip$ if$}
+  abnt.cite.style #0 = {"\MakeUppercase{" swap$ * "}" * *} 'skip$ if$}
   {t bbl.ldots * "}{" * t
-  abnt.cite.style #0 = {"u" change.case$} 'skip$ if$ * bbl.ldots *}
+  abnt.cite.style #0 = {"\MakeUppercase{" swap$ * "}" *} 'skip$ if$ * bbl.ldots *}
 if$
 }
 
@@ -1378,9 +1378,9 @@ FUNCTION {calc.extended.label}
     {editor empty$ not
      {editor format.names.for.label1 * "}{" *  editor format.names.for.label2 *}
      {org-short empty$ not
-      {org-short * "}{" * org-short "u" change.case$ *}
+      {org-short * "}{" * "\MakeUppercase{" org-short * "}" * *}
       {organization empty$ not
-       {organization * "}{" * organization "u" change.case$ *}
+       {organization * "}{" * "\MakeUppercase{" organization * "}" * *}
         {title empty$ not
          {title format.title.for.label *}
          {"nada}{NADA" *}
