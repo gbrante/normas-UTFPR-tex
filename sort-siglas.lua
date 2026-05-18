@@ -18,7 +18,7 @@ if f then
         local sigla = line:match("{([^\\}]+)\\hfil")
         return sigla or line
     end
-    table.sort(lines, function(a, b) return get_key(a) < get_key(b) end)
+    table.sort(lines, function(a, b) return get_key(a):lower() < get_key(b):lower() end)
     f = io.open(filename, "w")
     for _, line in ipairs(lines) do
         f:write(line .. "\n")
