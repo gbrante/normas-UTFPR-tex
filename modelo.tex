@@ -96,7 +96,19 @@
 \ifpdf
 \includepdf{folhaaprovacao.pdf}
 \else
-\immediate\write18{gs -dALLOWPSTRANSPARENCY -dCompatibilityLevel=1.5 -dNOPAUSE -dBATCH -sDEVICE=eps2write -dEPSFitPage -g5950x8420 -r600 -sOutputFile=folhaaprovacao.eps folhaaprovacao.pdf}
+% Com latex+dvips a folha precisa virar EPS. Duas conversoes, em ordem de preferencia:
+%  1) pdftops (poppler, vem no MiKTeX): mantem as fontes vetoriais reais do PDF e
+%     gera um arquivo bem menor; e o resultado de melhor qualidade.
+%  2) gs: usado so se o pdftops nao existir. Exige -dNoOutputFonts, que converte o
+%     texto em curvas; sem ele o eps2write transforma as fontes CID do PDF em um
+%     Type 3 de bitmaps 1-bit (600 dpi), que sai serrilhado. E exige o retangulo
+%     branco de fundo, porque o eps2write recorta o %%BoundingBox na area impressa:
+%     com uma caixa menor que A4 o \includegraphics abaixo ampliaria a folha e a
+%     deixaria deslocada/cortada na pagina.
+% O \detokenize protege as aspas do shorthand " do babel-portugues.
+% No Linux/Overleaf o Ghostscript chama-se "gs"; no Windows, "gswin64c".
+\edef\gsfolhaaprovacao{\detokenize{-dALLOWPSTRANSPARENCY -dNOPAUSE -dBATCH -sDEVICE=eps2write -dNoOutputFonts -dFIXEDMEDIA -dDEVICEWIDTHPOINTS=596 -dDEVICEHEIGHTPOINTS=842 -sOutputFile=folhaaprovacao.eps -c "1 1 1 setrgbcolor 0 0 596 842 rectfill" -f folhaaprovacao.pdf}}
+\immediate\write18{pdftops -eps folhaaprovacao.pdf folhaaprovacao.eps || gs \gsfolhaaprovacao\space|| gswin64c \gsfolhaaprovacao}
 \newpage
 \thispagestyle{empty}
   \vspace*{-\topmargin}\vspace{-\headheight}\vspace{-\headsep}\vspace{-1.27in}\vspace{-\voffset}%
