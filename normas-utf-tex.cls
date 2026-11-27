@@ -637,16 +637,32 @@
 		{}
 }
 
-\renewcommand*{\l@figure}[2]
-{
-	\leftskip 2.8em
-	\rightskip 0em
-	\parfillskip -\rightskip
-	\parindent -2em
-	\@tempdima 3em
-	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-        {\bfseries Figura #1 \noindent }\nobreak \figfillnum{#2}
+% Entrada das listas de figuras/tabelas com recuo deslocado (hanging indent):
+% o rotulo "Figura N --" fica numa caixa de largura fixa e as linhas seguintes
+% alinham com o inicio do titulo; reserva-se margem a direita para o numero da
+% pagina, de modo que o texto nao invada a coluna de paginas.
+% #1 = nome (Figura/Tabela), #2 = fonte do rotulo, #3 = entrada (\numberline{n}{titulo}), #4 = pagina
+\newlength{\UTFPRlistlabelwidth}
+\newcommand*{\UTFPRlistentry}[4]{%
+	\par\begingroup
+	\settowidth{\UTFPRlistlabelwidth}{\bfseries Tabela 00\enspace--\enspace}%
+	\setlength{\leftskip}{\UTFPRlistlabelwidth}%
+	\setlength{\rightskip}{\@pnumwidth}\addtolength{\rightskip}{1em}%
+	\setlength{\parfillskip}{-\rightskip}%
+	\setlength{\parindent}{\z@}%
+	\interlinepenalty\@M
+	\renewcommand*{\numberline}[1]{%
+		\hb@xt@\UTFPRlistlabelwidth{{#2#1~##1}\hfil--\enspace}}%
+	\leavevmode\hskip -\leftskip
+	{\bfseries #3}\nobreak
+	{\normalfont\leaders\hbox{$\m@th\mkern 4mu\hbox{.}\mkern 4mu$}\hskip 1.5em plus 1fill}\nobreak
+	\hb@xt@\@pnumwidth{\hfil\bfseries #4}%
+	\par
+	\endgroup
+	\begin{spacing}{\taxaespacomeio}\par\end{spacing}%
 }
+
+\renewcommand*{\l@figure}[2]{\UTFPRlistentry{Figura}{\bfseries}{#1}{#2}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -676,17 +692,7 @@
 		{}
 }%
 
-\renewcommand*{\l@table}[2]
-{
-	\leftskip 2.8em % 3.4em
-	\rightskip 0em
-	\parfillskip -\rightskip
-	\parindent -2em
-	\@tempdima 3em
-	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-	%{\MakeUppercase{Tabela \normalfont #1}}\nobreak \tabfillnum{#2}
-	{\bfseries Tabela #1}\nobreak \tabfillnum{#2} % 
-}
+\renewcommand*{\l@table}[2]{\UTFPRlistentry{Tabela}{\bfseries}{#1}{#2}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LISTA DE QUADROS
